@@ -1,4 +1,4 @@
-type RequiredEnvKey = "RESEND_API_KEY" | "MAIL_FROM" | "MAIL_TO";
+type RequiredEnvKey = "MAIL_FROM" | "MAIL_TO";
 
 function getEnvValue(key: RequiredEnvKey): string {
   const value = process.env[key]?.trim();
@@ -10,9 +10,14 @@ function getEnvValue(key: RequiredEnvKey): string {
   return value;
 }
 
+function getOptionalEnvValue(key: "RESEND_API_KEY" | "MAILERSEND_API_KEY") {
+  return process.env[key]?.trim() ?? "";
+}
+
 export function getMailConfig() {
   return {
-    resendApiKey: getEnvValue("RESEND_API_KEY"),
+    resendApiKey: getOptionalEnvValue("RESEND_API_KEY"),
+    mailerSendApiKey: getOptionalEnvValue("MAILERSEND_API_KEY"),
     mailFrom: getEnvValue("MAIL_FROM"),
     mailTo: getEnvValue("MAIL_TO"),
   };
