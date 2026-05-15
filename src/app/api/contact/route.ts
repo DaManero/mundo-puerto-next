@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { getMailConfig } from "@/lib/env";
+import { sendMailWithMailerSend } from "@/lib/mailersend";
 import { getResendClient } from "@/lib/resend";
 
 export const runtime = "nodejs";
@@ -87,21 +88,46 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: false, errors }, { status: 400 });
     }
 
-    const { mailFrom, mailTo } = getMailConfig();
-    const resend = getResendClient();
+    const { mailFrom, mailTo, mailerSendApiKey, resendApiKey } = getMailConfig();
+    const text = [
+      `Nombre: ${data.name}`,
+      `Email: ${data.email}`,
+      "",
+      "Mensaje:",
+      data.message,
+    ].join("\n");
 
+    if (mailerSendApiKey) {
+      const result = await sendMailWithMailerSend({
+        from: mailFrom,
+        to: mailTo,
+        replyTo: data.email,
+        subject: `[Web] ${data.subject}`,
+        text,
+      });
+
+      if (!result.ok) {
+        console.error("MailerSend error:", result.error);
+        return NextResponse.json(
+          { ok: false, error: "No se pudo enviar el mensaje." },
+          { status: 502 }
+        );
+      }
+
+      return NextResponse.json({ ok: true, id: result.id }, { status: 200 });
+    }
+
+    if (!resendApiKey) {
+      throw new Error("Missing email provider API key.");
+    }
+
+    const resend = getResendClient();
     const { data: sendData, error } = await resend.emails.send({
       from: mailFrom,
       to: [mailTo],
       replyTo: data.email,
       subject: `[Web] ${data.subject}`,
-      text: [
-        `Nombre: ${data.name}`,
-        `Email: ${data.email}`,
-        "",
-        "Mensaje:",
-        data.message,
-      ].join("\n"),
+      text,
     });
 
     if (error) {
