@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import LegacyIframe from "@/components/LegacyIframe";
 import { getLegacyPerfilesUrl } from "@/lib/legacy";
 
 type PageProps = {
@@ -16,12 +17,7 @@ export default async function PerfilDetailPage({ params }: PageProps) {
 
   return (
     <main className="mp-legacy-main">
-      <iframe
-        className="mp-legacy-frame"
-        src={legacyUrl}
-        title={`Perfil ${slug}`}
-        loading="lazy"
-      />
+      <LegacyIframe src={legacyUrl} title={`Perfil ${slug}`} />
     </main>
   );
 }

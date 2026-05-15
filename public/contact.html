@@ -25,7 +25,8 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900'>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Poppins:100,300,400,400italic,500,700,700italic'>
+    <link rel='stylesheet'
+        href='http://fonts.googleapis.com/css?family=Poppins:100,300,400,400italic,500,700,700italic'>
 
     <!-- CSS -->
     <link rel='stylesheet' href='css/global.css'>
@@ -36,9 +37,11 @@
 
 </head>
 
-<body class="button-default layout-full-width no-content-padding header-transparent minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
+<body
+    class="button-default layout-full-width no-content-padding header-transparent minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
     <div id="Wrapper">
-        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3" style="background-image: url(images/mp_img/slider_contacto.jpg)">
+        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3"
+            style="background-image: url(images/mp_img/slider_contacto.jpg)">
             <header id="Header">
                 <div class="header_placeholder"></div>
                 <div id="Top_bar">
@@ -46,7 +49,16 @@
                         <div class="column one">
                             <div class="top_bar_left clearfix">
                                 <div class="logo">
-                                    <a id="logo" href="index.html" title="BeCompany 2 - BeTheme" data-height="55" data-padding="30"><img class="logo-main scale-with-grid" src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png" data-height="40"><img class="logo-sticky scale-with-grid" src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png" data-height="40"><img class="logo-mobile scale-with-grid" src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png" data-height="40"><img class="logo-mobile-sticky scale-with-grid" src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png" data-height="40"></a>
+                                    <a id="logo" href="index.html" title="BeCompany 2 - BeTheme" data-height="55"
+                                        data-padding="30"><img class="logo-main scale-with-grid"
+                                            src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png"
+                                            data-height="40"><img class="logo-sticky scale-with-grid"
+                                            src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png"
+                                            data-height="40"><img class="logo-mobile scale-with-grid"
+                                            src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png"
+                                            data-height="40"><img class="logo-mobile-sticky scale-with-grid"
+                                            src="images/mp_img/logoMP.png" data-retina="images/mp_img/logoMP.png"
+                                            data-height="40"></a>
                                 </div>
                                 <div class="menu_wrapper">
                                     <nav id="menu">
@@ -92,7 +104,8 @@
                     <div class="entry-content">
                         <div class="section mcb-section highlight-right" style="padding-top:0px; padding-bottom:0px">
                             <div class="section_wrapper mcb-section-inner">
-                                <div class="wrap mcb-wrap one-second valign-top clearfix" style="padding:100px 4% 60px 2%">
+                                <div class="wrap mcb-wrap one-second valign-top clearfix"
+                                    style="padding:100px 4% 60px 2%">
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix">
@@ -100,23 +113,31 @@
                                                 <hr class="no_line" style="margin:0 auto 20px">
 
                                                 <div id="contactWrapper">
-                                                    <form id="contactform" action="php/procesaconsulta.php" method="post">
+                                                    <form id="contactform" action="/api/contact" method="post">
                                                         <!-- One Second (1/2) Column -->
                                                         <div class="column one-second">
-                                                            <input placeholder="Nombre" type="text" name="name" id="name" size="40" aria-required="true" aria-invalid="false" />
+                                                            <input placeholder="Nombre" type="text" name="name"
+                                                                id="name" size="40" aria-required="true"
+                                                                aria-invalid="false" />
                                                         </div>
                                                         <!-- One Second (1/2) Column -->
                                                         <div class="column one-second">
-                                                            <input placeholder="Correo elecrónico" type="email" name="email" id="email" size="40" aria-required="true" aria-invalid="false" />
+                                                            <input placeholder="Correo elecrónico" type="email"
+                                                                name="email" id="email" size="40" aria-required="true"
+                                                                aria-invalid="false" />
                                                         </div>
                                                         <div class="column one">
-                                                            <input placeholder="Asunto" type="text" name="subject" id="subject" size="40" aria-invalid="false" />
+                                                            <input placeholder="Asunto" type="text" name="subject"
+                                                                id="subject" size="40" aria-invalid="false" />
                                                         </div>
                                                         <div class="column one">
-                                                            <textarea placeholder="Mensaje" name="body" id="body" style="width:100%;" rows="10" aria-invalid="false"></textarea>
+                                                            <textarea placeholder="Mensaje" name="body" id="body"
+                                                                style="width:100%;" rows="10"
+                                                                aria-invalid="false"></textarea>
                                                         </div>
                                                         <div class="column one">
-                                                            <input type="button" value="Enviar Mensaje" id="submit" type="submit">
+                                                            <input type="button" value="Enviar Mensaje" id="submit"
+                                                                onclick="check_values(); return false;">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -124,7 +145,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="wrap mcb-wrap one-second valign-top clearfix" style="padding:100px 2% 60px 4%">
+                                <div class="wrap mcb-wrap one-second valign-top clearfix"
+                                    style="padding:100px 2% 60px 4%">
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix">
@@ -135,9 +157,11 @@
                                         </div>
                                         <div class="column mcb-column one-second column_column">
                                             <div class="column_attr clearfix">
-                                                <div class="image_frame image_item no_link scale-with-grid alignnone no_border">
+                                                <div
+                                                    class="image_frame image_item no_link scale-with-grid alignnone no_border">
                                                     <div class="image_wrapper">
-                                                        <img class="scale-with-grid" src="images/home_company2_contact3.png">
+                                                        <img class="scale-with-grid"
+                                                            src="images/home_company2_contact3.png">
                                                     </div>
                                                 </div>
                                                 <hr class="no_line">
@@ -152,9 +176,11 @@
                                         </div>
                                         <div class="column mcb-column one-second column_column">
                                             <div class="column_attr clearfix">
-                                                <div class="image_frame image_item no_link scale-with-grid alignnone no_border">
+                                                <div
+                                                    class="image_frame image_item no_link scale-with-grid alignnone no_border">
                                                     <div class="image_wrapper">
-                                                        <img class="scale-with-grid" src="images/home_company2_contact4.png">
+                                                        <img class="scale-with-grid"
+                                                            src="images/home_company2_contact4.png">
                                                     </div>
                                                 </div>
                                                 <hr class="no_line">
@@ -167,15 +193,18 @@
                                         </div>
                                         <div class="column mcb-column one-second column_column">
                                             <div class="column_attr clearfix">
-                                                <div class="image_frame image_item no_link scale-with-grid alignnone no_border">
+                                                <div
+                                                    class="image_frame image_item no_link scale-with-grid alignnone no_border">
                                                     <div class="image_wrapper">
-                                                        <img class="scale-with-grid" src="images/home_company2_contact5.png">
+                                                        <img class="scale-with-grid"
+                                                            src="images/home_company2_contact5.png">
                                                     </div>
                                                 </div>
                                                 <hr class="no_line">
                                                 <h6>Seguinos...</h6>
                                                 <p style="font-size: 28px; line-height: 40px">
-                                                    <a href="https://twitter.com/MundoPuerto"><i class="icon-twitter-circled"></i></a>
+                                                    <a href="https://twitter.com/MundoPuerto"><i
+                                                            class="icon-twitter-circled"></i></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -183,7 +212,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section mcb-section no-margin-h no-margin-v full-width" style="padding-top:0px; padding-bottom:0px">
+                        <div class="section mcb-section no-margin-h no-margin-v full-width"
+                            style="padding-top:0px; padding-bottom:0px">
                             <div class="section_wrapper mcb-section-inner">
                                 <div class="wrap mcb-wrap one valign-top clearfix">
                                     <div class="mcb-wrap-inner">

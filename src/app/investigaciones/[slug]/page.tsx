@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import LegacyIframe from "@/components/LegacyIframe";
 import { getLegacyInvestigacionesUrl } from "@/lib/legacy";
 
 type PageProps = {
@@ -16,12 +17,7 @@ export default async function InvestigacionDetailPage({ params }: PageProps) {
 
   return (
     <main className="mp-legacy-main">
-      <iframe
-        className="mp-legacy-frame"
-        src={legacyUrl}
-        title={`Investigacion ${slug}`}
-        loading="lazy"
-      />
+      <LegacyIframe src={legacyUrl} title={`Investigacion ${slug}`} />
     </main>
   );
 }

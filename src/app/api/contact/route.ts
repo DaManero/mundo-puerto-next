@@ -10,6 +10,7 @@ type ContactPayload = {
   email?: string;
   subject?: string;
   message?: string;
+  body?: string;
 };
 
 function isValidEmail(email: string): boolean {
@@ -52,8 +53,35 @@ function validatePayload(payload: ContactPayload) {
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as ContactPayload;
-    const { data, errors } = validatePayload(body);
+    const contentType = request.headers.get("content-type")?.toLowerCase() ?? "";
+    let payload: ContactPayload;
+
+    if (contentType.includes("application/json")) {
+      payload = (await request.json()) as ContactPayload;
+    } else if (
+      contentType.includes("application/x-www-form-urlencoded") ||
+      contentType.includes("multipart/form-data")
+    ) {
+      const form = await request.formData();
+      payload = {
+        name: String(form.get("name") ?? ""),
+        email: String(form.get("email") ?? ""),
+        subject: String(form.get("subject") ?? ""),
+        message: String(form.get("message") ?? form.get("body") ?? ""),
+      };
+    } else {
+      return NextResponse.json(
+        { ok: false, error: "Content-Type no soportado." },
+        { status: 415 }
+      );
+    }
+
+    const mergedPayload: ContactPayload = {
+      ...payload,
+      message: payload.message ?? payload.body,
+    };
+
+    const { data, errors } = validatePayload(mergedPayload);
 
     if (errors.length > 0) {
       return NextResponse.json({ ok: false, errors }, { status: 400 });
