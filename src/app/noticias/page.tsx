@@ -3,6 +3,12 @@ import Link from "next/link";
 
 const noticias = [
   {
+    href: "/noticias/editorial_practicaje",
+    title: "Practicaje, pilotaje, baquía: una reforma que exige revisión técnica antes que ideológica",
+    date: "05 de Agosto de 2026",
+    image: "/noticias/img_noticias/editorial_practicaje.jpg",
+  },
+  {
     href: "/noticias/entrevista_lourido",
     title: "Entrevista a Laureano Lourido",
     date: "11 de Mayo de 2023",
