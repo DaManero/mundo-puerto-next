@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>Fundación Mundo Puerto</title>
+    <meta name="description"
+        content="Editorial de la Fundación Mundo Puerto sobre el Decreto 690/2026 y la reforma del régimen de practicaje, pilotaje y baquía.">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+
+    <!-- FONTS -->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900'>
+    <link rel='stylesheet'
+        href='http://fonts.googleapis.com/css?family=Poppins:100,300,400,400italic,500,700,700italic'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel='stylesheet' href='../../css/global.css'>
+    <link rel='stylesheet' href='../../content/company2/css/structure.css'>
+    <link rel='stylesheet' href='../../content/company2/css/company2.css'>
+    <link rel='stylesheet' href='../../content/company2/css/custom.css'>
+
+    <style>
+        :root {
+            --mp-font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
+            --mp-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --mp-ink: #0a1f45;
+            --mp-ink-soft: #2c3a4e;
+            --mp-muted: #6b7789;
+            --mp-line: #e5eaf1;
+            --mp-bg: #f5f7fa;
+            --mp-accent: #d18b3d;
+            --mp-navy: #172e59;
+            --mp-navy-deep: #0a1f45;
+        }
+
+        body:not(.template-slider) #Content {
+            padding-top: 0;
+        }
+
+        .mp-modern-article {
+            --gutter: 24px;
+            --main-w: 820px;
+            --wide-w: 820px;
+            display: grid;
+            grid-template-columns:
+                [full-start] minmax(var(--gutter), 1fr) [wide-start] minmax(0, calc((var(--wide-w) - var(--main-w)) / 2)) [main-start] minmax(0, var(--main-w)) [main-end] minmax(0, calc((var(--wide-w) - var(--main-w)) / 2)) [wide-end] minmax(var(--gutter), 1fr) [full-end];
+            row-gap: 40px;
+            margin: 0 0 96px;
+            font-family: var(--mp-font-sans);
+            color: var(--mp-ink-soft);
+            font-feature-settings: "ss01", "cv11";
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .mp-modern-article>* {
+            grid-column: main;
+        }
+
+        .mp-modern-article>.mp-wide {
+            grid-column: wide-start / wide-end;
+        }
+
+        .mp-modern-article>.mp-full {
+            grid-column: full-start / full-end;
+        }
+
+        .mp-modern-back {
+            margin-bottom: 8px;
+        }
+
+        .mp-modern-back a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 20px;
+            background: var(--mp-bg);
+            border-radius: 999px;
+            color: var(--mp-navy);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .mp-modern-back a:hover {
+            background: #e2e8f0;
+            transform: translateX(-2px);
+        }
+
+        /* HERO */
+        .mp-modern-hero {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            min-height: 520px;
+            background: var(--mp-navy-deep);
+            color: #fff;
+            margin: 0;
+        }
+
+        .mp-modern-hero-media {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .mp-modern-hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mp-modern-hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(10, 31, 69, 0.55) 0%,
+                    rgba(10, 31, 69, 0.25) 18%,
+                    rgba(10, 31, 69, 0.10) 40%,
+                    rgba(10, 31, 69, 0.55) 72%,
+                    rgba(10, 31, 69, 0.92) 100%);
+        }
+
+        .mp-modern-hero-body {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 56px clamp(24px, 6vw, 96px) 60px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mp-modern-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 3.5px;
+            color: var(--mp-accent);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .mp-modern-kicker::before {
+            content: "";
+            width: 24px;
+            height: 2px;
+            background: var(--mp-accent);
+            display: inline-block;
+        }
+
+        .mp-modern-title {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(32px, 3.6vw, 48px);
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin: 0 0 22px;
+            color: #fff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+            max-width: 720px;
+        }
+
+        .mp-modern-meta {
+            font-family: var(--mp-font-sans);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .mp-modern-meta .dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        /* BYLINE */
+        .mp-modern-byline {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 20px 24px;
+            background: var(--mp-bg);
+            border-left: 3px solid var(--mp-accent);
+            border-radius: 12px;
+        }
+
+        .mp-modern-byline-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--mp-navy) 0%, var(--mp-navy-deep) 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mp-font-serif);
+            font-style: italic;
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: -1px;
+        }
+
+        .mp-modern-byline-kicker {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 10px;
+            color: var(--mp-accent);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .mp-modern-byline-name {
+            font-family: var(--mp-font-sans);
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--mp-ink);
+            margin: 2px 0 0;
+        }
+
+        .mp-modern-byline-role {
+            font-family: var(--mp-font-sans);
+            font-size: 13px;
+            color: var(--mp-muted);
+            margin: 2px 0 0;
+        }
+
+        /* BODY */
+        .mp-modern-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mp-modern-lead {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(19px, 1.5vw, 22px);
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--mp-ink);
+            margin: 0 0 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--mp-line);
+        }
+
+        .mp-modern-section {
+            margin: 0 0 44px;
+        }
+
+        .mp-modern-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .mp-modern-h2 {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(24px, 2.2vw, 30px);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--mp-ink);
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin: 0 0 20px;
+        }
+
+        .mp-modern-p {
+            font-family: var(--mp-font-sans);
+            font-size: 17px;
+            line-height: 1.75;
+            margin: 0 0 20px;
+            color: var(--mp-ink-soft);
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        .mp-modern-p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mp-modern-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mp-modern-list li {
+            font-family: var(--mp-font-sans);
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: var(--mp-ink-soft);
+            padding: 16px 20px 16px 52px;
+            background: var(--mp-bg);
+            border-radius: 10px;
+            position: relative;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        .mp-modern-list li::before {
+            content: "";
+            position: absolute;
+            left: 22px;
+            top: 26px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--mp-accent);
+        }
+
+        .mp-modern-note {
+            font-family: var(--mp-font-sans);
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--mp-muted);
+            margin: 30px 0 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--mp-line);
+            font-style: italic;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .mp-modern-hero {
+                aspect-ratio: 3 / 2;
+                min-height: 440px;
+            }
+
+            .mp-modern-hero-body {
+                padding: 40px 32px 40px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .mp-modern-article {
+                --gutter: 18px;
+                row-gap: 32px;
+                margin: 0 0 60px;
+            }
+
+            .mp-modern-hero {
+                aspect-ratio: 4 / 5;
+                min-height: 460px;
+            }
+
+            .mp-modern-hero-body {
+                padding: 28px 22px 32px;
+            }
+
+            .mp-modern-byline {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .mp-modern-byline-avatar {
+                margin: 0 auto;
+            }
+
+            .mp-modern-lead {
+                font-size: 18px;
+            }
+
+            .mp-modern-p,
+            .mp-modern-list li {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+
+<body
+    class="button-default layout-full-width no-content-padding header-transparent minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
+    <div id="Wrapper">
+        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3">
+            <header id="Header">
+                <div class="header_placeholder"></div>
+                <div id="Top_bar">
+                    <div class="container">
+                        <div class="column one">
+                            <div class="top_bar_left clearfix" style="width: 1300px;">
+                                <div class="logo">
+                                    <a id="logo" href="index.html" title="BeCompany 2 - BeTheme" data-height="55"
+                                        data-padding="30"><img class="logo-main scale-with-grid"
+                                            src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-sticky scale-with-grid" src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-mobile scale-with-grid" src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-mobile-sticky scale-with-grid"
+                                            src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"></a>
+                                </div>
+                                <div class="menu_wrapper">
+                                    <nav id="menu">
+                                        <ul id="menu-main-menu" class="menu menu-main">
+                                            <li>
+                                                <a href="../../index.html"><span>Home</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="../../about.html"><span>Nosotros</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="../../investigacion.html"><span>Investigación</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="../../consultivo.html"><span>Consejo Consultivo</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="../../blog.html"><span>Noticias</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="../../contact.html"><span>Contacto</span></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <a class="responsive-menu-toggle" href="#"><i class="icon-menu-fine"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div id="Content">
+            <article class="mp-modern-article">
+
+
+                <header class="mp-modern-hero mp-full">
+                    <div class="mp-modern-hero-media">
+                        <img src="img_noticias/editorial_practicaje.jpg"
+                            alt="Practicaje, pilotaje y baquía en la Vía Navegable Troncal">
+                    </div>
+                    <div class="mp-modern-hero-body">
+                        <span class="mp-modern-kicker">Editorial</span>
+                        <h1 class="mp-modern-title">
+                            Practicaje, pilotaje, baquía: una reforma que exige revisión técnica antes que ideológica
+                        </h1>
+                    </div>
+                </header>
+
+                <div class="mp-modern-back">
+                    <a href="../blog.html">« Volver a Noticias</a>
+                </div>
+
+                <aside class="mp-modern-byline">
+                    <div class="mp-modern-byline-avatar">JL</div>
+                    <div>
+                        <span class="mp-modern-byline-kicker">Editorial · 05 de Agosto de 2026</span>
+                        <p class="mp-modern-byline-name">Juan Ignacio Leonardi</p>
+                        <p class="mp-modern-byline-role">Presidente · Fundación Mundo Puerto</p>
+                    </div>
+                </aside>
+
+                <div class="mp-modern-body">
+
+                    <p class="mp-modern-lead">
+                        El Decreto 690/2026, publicado el 31 de julio en el Boletín Oficial, deroga el Decreto 2694/91
+                        —marco vigente durante treinta y cuatro años— e introduce la reforma más profunda al régimen
+                        de practicaje, pilotaje y baquía en la Argentina moderna.
+                    </p>
+
+                    <section class="mp-modern-section">
+                        <p class="mp-modern-p">
+                            Entre sus disposiciones estructurales se destacan la apertura sin cupos del registro de
+                            prácticos habilitados ante la Prefectura Naval Argentina (PNA), contratación de prácticos
+                            como profesionales independientes, tarifas máximas fijadas por la Agencia Nacional de
+                            Puertos y Navegación (ANPYN) para la totalidad del servicio —incluidas maniobras de atraque,
+                            desatraque y fondeo—, desregulación de los medios de transporte de prácticos. Y la
+                            disposición que concentra el mayor volumen de objeciones técnicas: la posibilidad de que
+                            capitanes o patrones, nacionales o extranjeros, obtengan un certificado de conocimiento de
+                            zona acreditando en unos pocos viajes y prescindan así de la contratación obligatoria de
+                            práctico o baqueano.
+                        </p>
+                        <p class="mp-modern-p">
+                            Como entidad que sigue de cerca la actividad portuaria, marítima y fluviolacustre del país,
+                            la <strong>Fundación Mundo Puerto</strong> considera necesario fijar posición sobre una
+                            reforma de esta magnitud, con el rigor técnico que el tema exige, sin caer en la lógica de
+                            bandos que domina buena parte del debate público y sin perder de vista que, este asunto en
+                            particular, tiene que analizarse de una manera sistémica e integrada a la Marina Mercante.
+                        </p>
+                    </section>
+
+                    <section class="mp-modern-section">
+                        <h2 class="mp-modern-h2">El practicaje como gestión de riesgo, no como trámite administrativo
+                        </h2>
+                        <p class="mp-modern-p">
+                            La navegación comercial moderna ha evolucionado durante décadas bajo un principio que nunca
+                            debería ser objeto de experimentación: <strong>la seguridad operacional</strong>. Ésta
+                            constituye un valor superior frente a cualquier intención de reducción de costos o
+                            simplificación administrativa. Ese concepto atraviesa toda la normativa internacional, desde
+                            el Convenio SOLAS o la propia Resolución A960(23) de la Organización Marítima Internacional
+                            hasta el Código Internacional de Gestión de la Seguridad (ISM Code), así como el Régimen de
+                            la Navegación Marítima, fluvial y Lacustre que forman parte de la cultura profesional de
+                            quienes han pasado su vida a bordo.
+                        </p>
+                        <p class="mp-modern-p">
+                            El servicio de practicaje —y sus variantes de pilotaje marítimo y baquía fluvial— no es un
+                            requisito burocrático adosado a la operación portuaria: es un <strong>dispositivo de gestión
+                                de riesgo operacional</strong> en tramos de navegación donde la maniobrabilidad del
+                            buque, la restricción de las aguas y el factor humano interactúan de forma crítica.
+                        </p>
+                        <p class="mp-modern-p">
+                            En la Vía Navegable Troncal (VNT) Paraná–de la Plata, esto se traduce en una serie de
+                            factores como canales de ancho variable, corrientes cruzadas, calados ajustados al margen de
+                            la revancha bajo quilla disponible, tráfico mixto de buques de ultramar y convoyes de empuje
+                            de barcazas, y una dinámica de sedimentación constante que exige actualización permanente
+                            del conocimiento de zona más allá de lo que certifica cualquier carta náutica o sistema
+                            ECDIS.
+                        </p>
+                        <p class="mp-modern-p">
+                            Ese conocimiento focalizado —variaciones del canal navegable, comportamiento estacional de
+                            la corriente, puntos de maniobra crítica, protocolos de comunicación con practicaje y VTS
+                            locales, etc.— es precisamente lo que distingue al práctico o baqueano con conocimiento de
+                            zona de un capitán con experiencia general en navegación oceánica.
+                        </p>
+                        <p class="mp-modern-p">
+                            La práctica internacional en materia de seguridad de la navegación para aguas restringidas
+                            reconoce esta distinción: la mayoría de las administraciones marítimas mantienen esquemas de
+                            practicaje obligatorio o, cuando admiten certificados de exención, los sujetan a estándares
+                            de acreditación exigentes, revalidación periódica y evaluación práctica y presencial en la
+                            zona específica, y no a un mínimo de viajes verificado administrativamente en una libreta.
+                        </p>
+                        <p class="mp-modern-p">
+                            El práctico —entonces— no es un simple asesor administrativo del capitán. Es el profesional
+                            que incorpora al puente el conocimiento empírico acumulado de una determinada derrota,
+                            actualizado diariamente mediante la experiencia directa sobre el terreno. Ese conocimiento y
+                            la velocidad de su actualización y recálculo no pueden reemplazarse de manera sencilla con
+                            tecnología, sistemas electrónicos de navegación o experiencia oceánica.
+                        </p>
+                    </section>
+
+                    <section class="mp-modern-section">
+                        <h2 class="mp-modern-h2">Eficiencia económica y seguridad operacional</h2>
+                        <p class="mp-modern-p">
+                            El Decreto 690/2026 modifica aspectos centrales del sistema vigente con el objetivo
+                            declarado de aumentar la competencia, flexibilizar las condiciones de prestación del
+                            servicio y reducir costos logísticos. Desde una perspectiva económica esos objetivos pueden
+                            resultar legítimos. Sin embargo, el problema aparece cuando la eficiencia económica comienza
+                            a desplazar a la seguridad operacional como criterio rector del sistema.
+                        </p>
+                        <p class="mp-modern-p">
+                            En este contexto, la norma introduce una lógica regulatoria que, desde el punto de vista de
+                            la seguridad de la navegación, resulta —como mínimo— preocupante. En materia marítima existe
+                            un principio universal: <em>los accidentes graves rara vez obedecen a una única
+                                causa</em>. Generalmente son consecuencia de la acumulación de pequeñas degradaciones en
+                            las barreras de seguridad.
+                        </p>
+                        <p class="mp-modern-p">
+                            La seguridad de la navegación no puede basar su análisis únicamente en el costo del
+                            practicaje u otros. Debe medirse frente al costo potencial de un accidente mayor como así
+                            también frente al costo de una congestión de tráfico con sus consecuentes demoras. Y
+                            muchísimo menos si está en juego la vida humana en el mar.
+                        </p>
+                        <p class="mp-modern-p">
+                            Una varadura en el Paraná / de la Plata, la colisión de un buque tanque, el cierre
+                            prolongado de un canal de acceso o un derrame de hidrocarburos poseen consecuencias humanas,
+                            ambientales y económicas infinitamente superiores a cualquier ahorro obtenido mediante la
+                            flexibilización regulatoria. En la ingeniería del riesgo ese razonamiento resulta elemental.
+                            En el Decreto 690/2026 se omite.
+                        </p>
+                    </section>
+
+                    <section class="mp-modern-section">
+                        <h2 class="mp-modern-h2">Lo que preocupa no es la actualización del marco, sino su método</h2>
+                        <p class="mp-modern-p">
+                            Ninguna organización seria puede sostener que un régimen de treinta y cuatro años no admita
+                            revisión. Existen cuestionamientos sobre el régimen actual que parten de los mismos actores
+                            del sistema y que merecían y merecen discusión. El objetivo declarado de reducir costos
+                            logísticos y ampliar la competencia es, en sí mismo, legítimo.
+                        </p>
+                        <p class="mp-modern-p">
+                            Lo que genera inquietud desde una mirada profesional en este estadío es, en principio, el
+                            método: no se conocen estudios técnicos públicos —de accidentabilidad, de incidencia real
+                            del practicaje en el costo logístico total, de experiencia comparada— que sustenten el
+                            diseño específico de la reforma.
+                        </p>
+                        <p class="mp-modern-p">
+                            Tampoco existió, previo a la publicación del decreto, una instancia formal de consulta a las
+                            cámaras de profesionales, las autoridades portuarias, los operadores de terminales y los
+                            organismos técnicos del sector, pese a que la norma modifica de manera directa la operación
+                            cotidiana de prácticamente todos los puertos de la República.
+                        </p>
+                    </section>
+
+                    <section class="mp-modern-section">
+                        <h2 class="mp-modern-h2">Posición institucional</h2>
+                        <p class="mp-modern-p">
+                            La <strong>Fundación Mundo Puerto</strong> valora los objetivos de eficiencia, publicidad
+                            tarifaria y apertura de mercado que persigue el Decreto 690/2026, pero sostiene que, en su
+                            diseño actual, la norma debilita una función de seguridad de la navegación sin haber
+                            demostrado con evidencia técnica pública que el nuevo esquema preserve el mismo estándar de
+                            resguardo operacional que el régimen anterior.
+                        </p>
+                        <p class="mp-modern-p">
+                            La discusión de fondo no es entre regulación y desregulación en abstracto, sino entre qué
+                            funciones de un sistema portuario y fluvial pueden someterse a lógica de mercado y cuáles
+                            cumplen un rol de control y gestión de riesgo que exige criterios técnicos específicos,
+                            actualizables y humanos, ajenos a la sola variable de costo.
+                        </p>
+                        <p class="mp-modern-p">
+                            La judicialización del acto de gobierno inconsulto y las medidas de fuerza que paralizaron
+                            el ingreso de buques a terminales de todo el País en días pasados no constituyen, para esta
+                            Fundación, un resultado deseable ni para el sector profesional ni para la cadena
+                            exportadora ni para la actividad portuaria en su conjunto. Son sólo la consecuencia
+                            previsible y evitable de una reforma que se implementó con celeridad administrativa pero sin
+                            la maduración técnica que un cambio de esta naturaleza requiere.
+                        </p>
+                        <p class="mp-modern-p">
+                            Por ello, el acuerdo arribado en horas de la tarde del día de ayer (04/08/2026) nos da
+                            esperanzas de que exista margen para corregir el rumbo y plantear objetivos comunes a todas
+                            las partes involucradas. En ese afán, bregamos por:
+                        </p>
+
+                        <ul class="mp-modern-list">
+                            <li>
+                                La conformación de una <strong>mesa técnica permanente</strong> que incluya —como
+                                mínimo— a la ANPYN, ARA, PNA, JST, a las cámaras de prácticos, portuarias y armadoras,
+                                y representantes académicos del sector náutico.
+                            </li>
+                            <li>
+                                La publicación de <strong>indicadores de seguridad de la navegación</strong>
+                                —accidentes, incidentes, varaduras—, como condición para evaluar las necesidades de
+                                cambio y las soluciones propuestas.
+                            </li>
+                            <li>
+                                La revisión del <strong>umbral y las condiciones del certificado de conocimiento de
+                                    zona</strong> a la luz de estándares internacionales de acreditación de exención de
+                                practicaje, en particular en tramos de alta complejidad como los de la VNT.
+                            </li>
+                            <li>
+                                La <strong>implementación gradual</strong> de los acuerdos a los que se arribe,
+                                evitando que la transición se resuelva bajo presión de conflicto en lugar de bajo
+                                planificación operativa.
+                            </li>
+                        </ul>
+
+                        <p class="mp-modern-p">
+                            Esa discusión debe contemplar todos los aspectos de nuestro quehacer: el régimen de
+                            formación de los profesionales del transporte por agua, regímenes de trabajo, regulación
+                            del cabotaje, costos de los fletes, segundos registros… y una larga lista de etcéteras de
+                            temas pendientes de consensos.
+                        </p>
+                        <p class="mp-modern-p">
+                            Desde la <strong>Fundación Mundo Puerto</strong> continuaremos el seguimiento de este
+                            proceso con el mismo criterio que aplicamos a cada tema de la agenda portuaria y náutica:
+                            informar con rigor técnico, promover y mediar en el diálogo entre los actores del sistema y
+                            bregar por una política fluvio-marítima argentina a la altura de la relevancia estratégica
+                            que el transporte por agua tiene para su comercio exterior y para el desarrollo del País.
+                        </p>
+
+                        <p class="mp-modern-note">
+                            *Agradecemos la confianza depositada en nosotros por aquellas Instituciones con las que
+                            tomamos contacto durante el día de ayer, así como la honestidad intelectual con la que hemos
+                            podido intercambiar opiniones.
+                        </p>
+                    </section>
+
+                </div>
+            </article>
+        </div>
+    </div>
+    <br> <br>
+    <footer id="Footer" class="clearfix">
+        <div class="footer_copy">
+            <div class="container">
+                <div class="column one">
+                    <a id="back_to_top" class="button button_js" href="#"><i class="icon-up-open-big"></i></a>
+                    <div class="copyright">
+                        &copy; Fundación Mundo Puerto <a target="_blank" rel="nofollow" href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- side menu -->
+    <div id="Side_slide" class="right dark" data-width="250">
+        <div class="close-wrapper">
+            <a href="#" class="close"><i class="icon-cancel-fine"></i></a>
+        </div>
+        <div class="extras">
+            <a href="http://bit.ly/1M6lijQ" class="action_button" target="_blank">Buy now</a>
+        </div>
+        <div class="menu_wrapper"></div>
+    </div>
+    <div id="body_overlay"></div>
+
+    <!-- JS -->
+    <script src="../../js/jquery-2.1.4.min.js"></script>
+
+    <script src="../../js/mfn.menu.js"></script>
+    <script src="../../js/jquery.plugins.js"></script>
+    <script src="../../js/jquery.jplayer.min.js"></script>
+    <script src="../../js/animations/animations.js"></script>
+    <script src="../../js/translate3d.js"></script>
+    <script src="../../js/scripts.js"></script>
+
+</body>
+
+</html>

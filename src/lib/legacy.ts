@@ -8,6 +8,7 @@ const INVESTIGACIONES_ALIASES: Record<string, string> = {
 };
 
 const NOTICIAS_ALIASES: Record<string, string> = {
+  editorial_practicaje: "/noticias/editorial_practicaje.html",
   entrevista_lourido: "/noticias/entrevista_lourido.html",
   entrevista_duran: "/noticias/entrevista_duran.html",
   entrevista_tarraubela: "/noticias/entrevista_tarraubela.html",
