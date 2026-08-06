@@ -12,16 +12,18 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
 
-                   <title>Fundacion Mundo Puerto - Noticias</title>
-                   <meta name="title" content="Fundacion Mundo Puerto">
-                   <meta name="description" content="Proresionales en busca de una comunidad portuaria y logistica eficiente y sustentable">
-         
-                   <!-- Twitter -->
-                   <meta property="twitter:title" content="Entrevista: Ing. Jorge Ascencio">
-                   <meta property="twitter:description" content="Proresionales en busca de una comunidad portuaria y logistica eficiente y sustentable">
-                   <meta property="twitter:image" content="https://mundopuerto.ar/noticias/img_noticias/ascencio_tw.jpg">
-                   <meta property="twitter:url" content="https://mundopuerto.ar/noticias/entrevista_ascencio.html">
-                   <meta property="twitter:card" content="summary_large_image">
+    <title>Fundacion Mundo Puerto - Noticias</title>
+    <meta name="title" content="Fundacion Mundo Puerto">
+    <meta name="description"
+        content="Proresionales en busca de una comunidad portuaria y logistica eficiente y sustentable">
+
+    <!-- Twitter -->
+    <meta property="twitter:title" content="Entrevista al Ing. Luis Ascencio">
+    <meta property="twitter:description"
+        content="Proresionales en busca de una comunidad portuaria y logistica eficiente y sustentable">
+    <meta property="twitter:image" content="https://mundopuerto.ar/noticias/img_noticias/ascencio_tw.jpg">
+    <meta property="twitter:url" content="https://mundopuerto.ar/noticias/entrevista_ascensio.html">
+    <meta property="twitter:card" content="summary_large_image">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -33,7 +35,13 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900'>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Poppins:100,300,400,400italic,500,700,700italic'>
+    <link rel='stylesheet'
+        href='http://fonts.googleapis.com/css?family=Poppins:100,300,400,400italic,500,700,700italic'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel='stylesheet' href='../../css/global.css'>
@@ -41,23 +49,391 @@
     <link rel='stylesheet' href='../../content/company2/css/company2.css'>
     <link rel='stylesheet' href='../../content/company2/css/custom.css'>
 
+    <style>
+        :root {
+            --mp-font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
+            --mp-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --mp-ink: #0a1f45;
+            --mp-ink-soft: #2c3a4e;
+            --mp-muted: #6b7789;
+            --mp-line: #e5eaf1;
+            --mp-bg: #f5f7fa;
+            --mp-accent: #d18b3d;
+            --mp-navy: #172e59;
+            --mp-navy-deep: #0a1f45;
+        }
+
+        body:not(.template-slider) #Content {
+            padding-top: 0;
+        }
+
+        .mp-modern-article {
+            --gutter: 24px;
+            --main-w: 820px;
+            --wide-w: 820px;
+            display: grid;
+            grid-template-columns:
+                [full-start] minmax(var(--gutter), 1fr) [wide-start] minmax(0, calc((var(--wide-w) - var(--main-w)) / 2)) [main-start] minmax(0, var(--main-w)) [main-end] minmax(0, calc((var(--wide-w) - var(--main-w)) / 2)) [wide-end] minmax(var(--gutter), 1fr) [full-end];
+            row-gap: 40px;
+            margin: 0 0 96px;
+            font-family: var(--mp-font-sans);
+            color: var(--mp-ink-soft);
+            font-feature-settings: "ss01", "cv11";
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .mp-modern-article>* {
+            grid-column: main;
+        }
+
+        .mp-modern-article>.mp-wide {
+            grid-column: wide-start / wide-end;
+        }
+
+        .mp-modern-article>.mp-full {
+            grid-column: full-start / full-end;
+        }
+
+        .mp-modern-back {
+            margin-bottom: 8px;
+        }
+
+        .mp-modern-back a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 20px;
+            background: var(--mp-bg);
+            border-radius: 999px;
+            color: var(--mp-navy);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .mp-modern-back a:hover {
+            background: #e2e8f0;
+            transform: translateX(-2px);
+        }
+
+        /* HERO */
+        .mp-modern-hero {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            min-height: 520px;
+            background: var(--mp-navy-deep);
+            color: #fff;
+            margin: 0;
+        }
+
+        .mp-modern-hero-media {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .mp-modern-hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mp-modern-hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(10, 31, 69, 0.55) 0%,
+                    rgba(10, 31, 69, 0.25) 18%,
+                    rgba(10, 31, 69, 0.10) 40%,
+                    rgba(10, 31, 69, 0.55) 72%,
+                    rgba(10, 31, 69, 0.92) 100%);
+        }
+
+        .mp-modern-hero-body {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 56px clamp(24px, 6vw, 96px) 60px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mp-modern-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 3.5px;
+            color: var(--mp-accent);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .mp-modern-kicker::before {
+            content: "";
+            width: 24px;
+            height: 2px;
+            background: var(--mp-accent);
+            display: inline-block;
+        }
+
+        .mp-modern-title {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(32px, 3.6vw, 48px);
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin: 0 0 22px;
+            color: #fff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+            max-width: 720px;
+        }
+
+        .mp-modern-meta {
+            font-family: var(--mp-font-sans);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .mp-modern-meta .dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        /* BODY */
+        .mp-modern-body {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mp-modern-qa {
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 32px;
+            padding: 32px 0 4px;
+            border-top: 1px solid var(--mp-line);
+        }
+
+        .mp-modern-qa-num {
+            font-family: var(--mp-font-sans);
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--mp-accent);
+            letter-spacing: 2.5px;
+            padding-top: 14px;
+            font-feature-settings: "tnum";
+        }
+
+        .mp-modern-q {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(20px, 1.8vw, 26px);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--mp-ink);
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin: 0 0 18px;
+            font-variation-settings: "opsz" 48;
+        }
+
+        .mp-modern-a {
+            font-family: var(--mp-font-sans);
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0;
+            color: var(--mp-ink-soft);
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* FIGURE */
+        .mp-modern-figure {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 24px 55px rgba(10, 31, 69, 0.14);
+            margin: 0;
+        }
+
+        .mp-modern-figure img {
+            width: 100%;
+            display: block;
+        }
+
+        /* PROFILE */
+        .mp-modern-profile {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 44px;
+            padding: 48px 52px;
+            background: linear-gradient(135deg, #172e59 0%, #0a1f45 100%);
+            color: #fff;
+            border-radius: 22px;
+            align-items: center;
+            box-shadow: 0 24px 55px rgba(10, 31, 69, 0.25);
+        }
+
+        .mp-modern-profile-avatar {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .mp-modern-profile-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            font-size: 11px;
+            color: var(--mp-accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .mp-modern-profile-kicker::before {
+            content: "";
+            width: 24px;
+            height: 2px;
+            background: var(--mp-accent);
+            display: inline-block;
+        }
+
+        .mp-modern-profile h2 {
+            font-family: var(--mp-font-serif);
+            font-style: italic;
+            font-weight: 500;
+            font-size: clamp(26px, 2.4vw, 34px);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin: 0 0 18px;
+            color: #fff;
+            font-variation-settings: "opsz" 72;
+        }
+
+        .mp-modern-profile p {
+            font-family: var(--mp-font-sans);
+            margin: 0;
+            font-size: 14.5px;
+            line-height: 1.65;
+            color: #d7dee8;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .mp-modern-hero {
+                aspect-ratio: 3 / 2;
+                min-height: 440px;
+            }
+
+            .mp-modern-hero-body {
+                padding: 40px 32px 40px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .mp-modern-article {
+                --gutter: 18px;
+                row-gap: 40px;
+                margin: 24px 0 60px;
+            }
+
+            .mp-modern-hero {
+                aspect-ratio: 4 / 5;
+                min-height: 460px;
+            }
+
+            .mp-modern-hero-body {
+                padding: 28px 22px 32px;
+            }
+
+            .mp-modern-qa {
+                grid-template-columns: 1fr;
+                gap: 6px;
+                padding-top: 26px;
+            }
+
+            .mp-modern-qa-num {
+                padding-top: 0;
+            }
+
+            .mp-modern-a {
+                font-size: 16px;
+            }
+
+            .mp-modern-profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 22px;
+                padding: 32px 24px;
+            }
+
+            .mp-modern-profile-avatar {
+                width: 150px;
+                margin: 0 auto;
+            }
+
+            .mp-modern-profile-kicker,
+            .mp-modern-profile h2 {
+                justify-content: center;
+            }
+        }
+    </style>
+
 
 
 
 
 </head>
 
-<body class="button-default layout-full-width header-transparent minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
+<body
+    class="button-default layout-full-width no-content-padding header-transparent minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
     <div id="Wrapper">
-        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3" style="width: 1920px;height: 100px;">
+        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3">
             <header id="Header">
                 <div class="header_placeholder"></div>
                 <div id="Top_bar">
                     <div class="container">
                         <div class="column one">
-                            <div class="top_bar_left clearfix" style="width: 1200px;">
+                            <div class="top_bar_left clearfix" style="width: 1300px;">
                                 <div class="logo">
-                                    <a id="logo" href="index.html" title="BeCompany 2 - BeTheme" data-height="55" data-padding="30"><img class="logo-main scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"><img class="logo-sticky scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"><img class="logo-mobile scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"><img class="logo-mobile-sticky scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"></a>
+                                    <a id="logo" href="index.html" title="BeCompany 2 - BeTheme" data-height="55"
+                                        data-padding="30"><img class="logo-main scale-with-grid"
+                                            src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-sticky scale-with-grid" src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-mobile scale-with-grid" src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-mobile-sticky scale-with-grid"
+                                            src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"></a>
                                 </div>
                                 <div class="menu_wrapper">
                                     <nav id="menu">
@@ -90,145 +466,154 @@
                 </div>
             </header>
         </div>
-        <div style="margin-left: 1130px; margin-top: 20px;">
-            <a href="../blog.html"><span style="font-size:small" > « / Volver a <strong>NOTICIAS</strong></span></a>
-        </div>
-
         <div id="Content">
-    
-            <div class="content_wrapper clearfix">
-                <div class="sections_group">
-                    <div id="post-62" class="no-title share-simple post format-standard has-post-thumbnail hentry">
-                            <div class="section_wrapper clearfix">
-                                <div class="column one post-header">
-                                    <div class="title_wrapper">
-                                        <div class="post-meta clearfix">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column one single-photo-wrapper image">
-                                    <div class="image_frame scale-with-grid">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="post-wrapper-content">
-                            
-                            <div class="section mcb-section" style="padding-top:10px; padding-bottom:0px">
-                                <div class="section_wrapper mcb-section-inner">
-                                    
-                                    <div class="wrap mcb-wrap one valign-top clearfix">
-                                        <div class="mcb-wrap-inner">
-                                            <div class="column mcb-column one-fifth column_placeholder">
-                                                <div class="placeholder">
-                                                    &nbsp;
-                                                </div>
-                                            </div>
-                                            <div class="column mcb-column three-fifth column_column">
-                                                
-                                                <div class="column_attr clearfix">
-                                                    <h1>
-                                                        Luis Ascencio: “El liderazgo de la comunidad logística empieza por la autoridad portuaria local” 
-                                                    </h1>
-                                                    <hr>
-                                                    <img src="img_noticias/ascencio_01.jpg" alt="">
-                                                    <hr>
-                                                    <h3 style="font-size:large; font-weight:600">¿Cómo nace el concepto de Comunidad Logística Portuaria?</h3>
-                                                    <p class="big">
-                                                        Desde principios de los años 2000 desembarca en Argentina, México y Chile el concepto 
-                                                        de <strong>“Comunidad Logística Portuaria”</strong> principalmente influida por experiencias que provenían 
-                                                        desde Barcelona, España. Se comienza a trabajar para que el puerto no sea un ente aislado 
-                                                        en donde terminales, autoridades, empresas afines y sobre todo las ciudades no funcionen 
-                                                        como entidades estancas y aisladas y comiencen a  interoperar todos juntos en la tramitación 
-                                                        y coordinación dentro de la logística portuaria. En ese momento, algunos puertos comenzaron 
-                                                        a motivar la idea conformar estas comunidades, y se comienza a manejar el concepto de 
-                                                        <strong>“gobernanza de esas comunidades”</strong>.
-                                                        A nosotros nos tocó iniciar el camino en este aspecto en el Puerto San Antonio de Chile, 
-                                                        en donde tuvimos que armar esa comunidad logística que hoy ya tiene <strong>26 socios estratégicos 
-                                                        que se ponen al servicio de la actividad portuaria</strong>. A partir de esa primera experiencia 
-                                                        fuimos convocados por el SELA (Sistema Económico Latinoamericano y del Caribe), en ese 
-                                                        momento pasamos a una segunda etapa en donde las mejores prácticas que empezamos a ver 
-                                                        en distintos países las concentramos y comenzamos a crear una red de puertos digitales 
-                                                        y colaborativos. Comenzamos a incorporar distintos países y hoy en día somos 30 puertos 
-                                                        trabajando con este concepto. 
-                                                    </p>
-                                                    <h3 style="font-size:large; font-weight:600">¿Cómo es el estado de situación en Latinoamérica 
-                                                        respecto a Comunidades Logística?</h3>
-                                                    <p class="big">
-                                                        Muchos de los puertos que se sumaron recogieron las ideas, cada uno a distinta velocidad 
-                                                        fueron implementando buenas prácticas en este sentido. Por ejemplo, <strong>en Chile, desde hace 
-                                                        4 años atrás, esto pasó a ser una política de estado</strong>, es decir que las 10 principales 
-                                                        empresas portuarias tenían que conformar una comunidad logística y puedo decir que hoy 
-                                                        en día todas esas empresas ya tienen conformada su comunidad.  Los esfuerzos se siguen 
-                                                        dando para que cada vez más puertos puedan armar sus comunidades y los esfuerzos no 
-                                                        terminan en instituciones multilaterales como el SELA.                                                    
-                                                    </p>  
-                                                    <h3 style="font-size:large; font-weight:600">¿Quién debería tomar el liderazgo en la 
-                                                        gobernanza de la comunidad logística portuaria?</h3>
-                                                    <p class="big">
-                                                        Las comunidades tienen muchos actores, al final el poder, en capacidad de tomar decisiones, se distribuye 
-                                                        entre esos actores, pero <strong>al principio, el liderazgo público es fundamental, tiene que ser de la autoridad 
-                                                        portuaria</strong>. Hay muchos ejemplos en donde se ve que si la autoridad portuaria no se involucra, el privado 
-                                                        menos va a pujar por conformar sus comunidades.                                             
-                                                    </p>                                                        
-                                                    <hr>
-                                                    <img src="img_noticias/ascencio_02.jpg" alt="">
-                                                    <hr>
-                                                    <h3 style="font-size:large; font-weight:600">¿Qué papel juega a su criterio la digitalización para 
-                                                        promover al puerto como facilitador del comercio internacional?</h3>
-                                                    <p class="big">
-                                                        <strong>Ya se está generando, prácticamente, un ecosistema digital e informático</strong>. Si a toda la información y datos que 
-                                                        tenemos le sumamos inteligencia artificial, predicciones e información en anticipo, podemos crear otros 
-                                                        productos que ayuden a nuestros clientes. Fidelizar al cliente es muy importante y sobre todo porque se trata 
-                                                        de una industria de bajos márgenes y es intensiva en activos. <strong>La productividad es muy importante, por lo tanto, 
-                                                        si no tienes tecnología, si no tienes los datos en tiempo real, el impacto económico negativo es muy grande</strong>.                                            
-                                                    </p>                                                        
-                                                    <h3 style="font-size:large; font-weight:600">¿Cuál debería ser el rol de la digitalización en la integración 
-                                                        del sistema público y el mundo privado?</h3>
-                                                    <p class="big">
-                                                        El organismo público, como ser aduanas, ministerios economía o secretarías de comercio exterior tiene la necesidad de 
-                                                        adaptar sus sistemas para acoplarse a los sistemas informáticos de los privados. Documentación digital, estandarización 
-                                                        y organización de la información. <strong>Hay que romper con las “islas informáticas”, al final esto es como una red neuronal 
-                                                        que está conectada en todos sus nodos</strong>.                                            
-                                                    </p>                                                        
-                                                    <h3 style="font-size:large; font-weight:600">¿Qué tan importante resultó estar digitalizados ante el evento
-                                                         pandémico del 2020?</h3>
-                                                    <p class="big">
-                                                        Después de la pandemia se comenzó a hablar de <strong>“puertos resilientes”</strong>, que son aquellos que tienen esta gobernanza y que 
-                                                        pueden reaccionar ante situaciones extremas y vimos que muchos puertos que no tenían esta condición fueron más lentos 
-                                                        para la toma de decisiones. Yo creo que una variable que hoy en día se está sumando en el mundo portuario es la de 
-                                                        crear “capacidad de resiliencia” y la tecnología ha demostrado que permite realizar este tipo de competencia.                                     
-                                                    </p>                                                        
-                                                </div>
-                                                <div class="column mcb-column one column_column" style="background-color: #172e59;">
-                                                    <div class="column mcb-column two column_column" >
-                                                        <img  src="img_noticias/ascencio_perfil.jpg" alt="">
-                                                    </div>
-                                                    <div>
-                                                        <br>
-                                                        <h2> <strong style="color:white">LUIS ASCENCIO ></strong></h2>
-                                                        <p class="big" style="font-size:medium; padding-left: 20px; padding-right: 20px; color:white; text-align:right">
-                                                            Ingeniero Industrial, especialista en transporte y logística. Trabaja en asesoría internacional 
-                                                            en logística de transportes, en investigación aplicada en logística portuaria y es consultor 
-                                                            tecnológico en “ventanillas logísticas” de facilitación de comercio. 
-                                                            <br>
-                                                        </p>                                                             
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="section section-post-about">
-                                <div class="section_wrapper clearfix"></div>
-                            </div>
-                        </div>
+            <article class="mp-modern-article">
+                <header class="mp-modern-hero mp-full">
+                    <div class="mp-modern-hero-media">
+                        <img src="img_noticias/ascencio_01.jpg" alt="Ing. Luis Ascencio">
                     </div>
+                    <div class="mp-modern-hero-body">
+                        <span class="mp-modern-kicker">Entrevista</span>
+                        <h1 class="mp-modern-title">Ascencio: “El liderazgo de la comunidad logística empieza por la
+                            autoridad portuaria local”</h1>
+                        <p class="mp-modern-meta">
+                            <span>Ingeniero Industrial, especialista en transporte y logística</span>
+                            <span class="dot"></span>
+                            <span>19 de Diciembre de 2022</span>
+                        </p>
+                    </div>
+                </header>
+
+                <div class="mp-modern-back">
+                    <a href="../blog.html">← Volver a Noticias</a>
                 </div>
-            </div>
+
+                <div class="mp-modern-body">
+                    <section class="mp-modern-qa">
+                        <div class="mp-modern-qa-num">01</div>
+                        <div>
+                            <p class="mp-modern-q">¿Cómo nace el concepto de Comunidad Logística Portuaria?</p>
+                            <p class="mp-modern-a">
+                                Desde principios de los años 2000 desembarca en Argentina, México y Chile el concepto de
+                                “Comunidad Logística Portuaria”, principalmente influido por experiencias que provenían
+                                desde Barcelona, España. Se comienza a trabajar para que el puerto no sea un ente
+                                aislado en donde terminales, autoridades, empresas afines y sobre todo las ciudades no
+                                funcionen como entidades estancas y comiencen a interoperar todos juntos en la
+                                tramitación y coordinación dentro de la logística portuaria. En ese momento, algunos
+                                puertos comenzaron a motivar la idea de conformar estas comunidades, y se empieza a
+                                manejar el concepto de “gobernanza de esas comunidades”. A nosotros nos tocó iniciar el
+                                camino en el Puerto San Antonio de Chile, donde tuvimos que armar esa comunidad
+                                logística que hoy ya tiene 26 socios estratégicos que se ponen al servicio de la
+                                actividad portuaria. A partir de esa primera experiencia fuimos convocados por el SELA
+                                (Sistema Económico Latinoamericano y del Caribe) y pasamos a una segunda etapa: las
+                                mejores prácticas que empezamos a ver en distintos países las concentramos y creamos
+                                una red de puertos digitales y colaborativos. Hoy somos 30 puertos trabajando con este
+                                concepto.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="mp-modern-qa">
+                        <div class="mp-modern-qa-num">02</div>
+                        <div>
+                            <p class="mp-modern-q">¿Cómo es el estado de situación en Latinoamérica respecto a
+                                Comunidades Logísticas?</p>
+                            <p class="mp-modern-a">
+                                Muchos de los puertos que se sumaron recogieron las ideas y, cada uno a distinta
+                                velocidad, fueron implementando buenas prácticas en este sentido. Por ejemplo, en Chile,
+                                desde hace cuatro años, esto pasó a ser una política de estado: las diez principales
+                                empresas portuarias tenían que conformar una comunidad logística y puedo decir que hoy
+                                todas esas empresas ya tienen la suya conformada. Los esfuerzos se siguen dando para que
+                                cada vez más puertos puedan armar sus comunidades, y no terminan en instituciones
+                                multilaterales como el SELA.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="mp-modern-qa">
+                        <div class="mp-modern-qa-num">03</div>
+                        <div>
+                            <p class="mp-modern-q">¿Quién debería tomar el liderazgo en la gobernanza de la comunidad
+                                logística portuaria?</p>
+                            <p class="mp-modern-a">
+                                Las comunidades tienen muchos actores y, al final, el poder de tomar decisiones se
+                                distribuye entre ellos. Pero al principio el liderazgo público es fundamental: tiene que
+                                ser de la autoridad portuaria. Hay muchos ejemplos que muestran que, si la autoridad
+                                portuaria no se involucra, el privado aún menos va a pujar por conformar sus
+                                comunidades.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <figure class="mp-modern-figure mp-wide">
+                    <img src="img_noticias/ascencio_02.jpg" alt="Comunidad logística portuaria">
+                </figure>
+
+                <div class="mp-modern-body">
+                    <section class="mp-modern-qa">
+                        <div class="mp-modern-qa-num">04</div>
+                        <div>
+                            <p class="mp-modern-q">¿Qué papel juega la digitalización para promover al puerto como
+                                facilitador del comercio internacional?</p>
+                            <p class="mp-modern-a">
+                                Ya se está generando, prácticamente, un ecosistema digital e informático. Si a toda la
+                                información y datos que tenemos le sumamos inteligencia artificial, predicciones e
+                                información en anticipo, podemos crear otros productos que ayuden a nuestros clientes.
+                                Fidelizar al cliente es muy importante, sobre todo porque se trata de una industria de
+                                bajos márgenes e intensiva en activos. La productividad es clave: si no se cuenta con
+                                tecnología y con los datos en tiempo real, el impacto económico negativo es muy grande.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="mp-modern-qa">
+                        <div class="mp-modern-qa-num">05</div>
+                        <div>
+                            <p class="mp-modern-q">¿Cuál debería ser el rol de la digitalización en la integración del
+                                sistema público y el mundo privado?</p>
+                            <p class="mp-modern-a">
+                                El organismo público —aduanas, ministerios de economía o secretarías de comercio
+                                exterior— tiene la necesidad de adaptar sus sistemas para acoplarse a los sistemas
+                                informáticos de los privados: documentación digital, estandarización y organización de
+                                la información. Hay que romper con las “islas informáticas”; al final esto es como una
+                                red neuronal que está conectada en todos sus nodos.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="mp-modern-qa">
+                        <div class="mp-modern-qa-num">06</div>
+                        <div>
+                            <p class="mp-modern-q">¿Qué tan importante resultó estar digitalizados ante el evento
+                                pandémico del 2020?</p>
+                            <p class="mp-modern-a">
+                                Después de la pandemia se comenzó a hablar de “puertos resilientes”: aquellos que tienen
+                                esta gobernanza y que pueden reaccionar ante situaciones extremas. Muchos puertos que no
+                                tenían esta condición fueron más lentos para la toma de decisiones. Creo que una
+                                variable que hoy se está sumando en el mundo portuario es la de crear “capacidad de
+                                resiliencia”, y la tecnología ha demostrado ser un habilitador clave de esa
+                                competencia.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="mp-modern-profile mp-wide">
+                    <img class="mp-modern-profile-avatar" src="img_noticias/ascencio_perfil.jpg" alt="Luis Ascencio">
+                    <div>
+                        <span class="mp-modern-profile-kicker">Perfil</span>
+                        <h2>Luis Ascencio</h2>
+                        <p>
+                            Ingeniero Industrial, especialista en transporte y logística. Trabaja en asesoría
+                            internacional en logística de transportes, en investigación aplicada en logística portuaria
+                            y es consultor tecnológico en “ventanillas logísticas” de facilitación de comercio.
+                            Impulsor de comunidades logísticas portuarias en América Latina y de la red de puertos
+                            digitales y colaborativos junto al SELA.
+                        </p>
+                    </div>
+                </aside>
+            </article>
         </div>
         <br> <br>
         <footer id="Footer" class="clearfix">
@@ -269,20 +654,23 @@
 
     <style>
         #gallery-1 {
-                                                                    margin: auto;
-                                                                }
-                                                                #gallery-1 .gallery-item {
-                                                                    float: left;
-                                                                    margin-top: 10px;
-                                                                    text-align: center;
-                                                                    width: 33.33%;
-                                                                }
-                                                                #gallery-1 img {
-                                                                    border: 2px solid #cfcfcf;
-                                                                }
-                                                                #gallery-1 .gallery-caption {
-                                                                    margin-left: 0;
-                                                                }
+            margin: auto;
+        }
+
+        #gallery-1 .gallery-item {
+            float: left;
+            margin-top: 10px;
+            text-align: center;
+            width: 33.33%;
+        }
+
+        #gallery-1 img {
+            border: 2px solid #cfcfcf;
+        }
+
+        #gallery-1 .gallery-caption {
+            margin-left: 0;
+        }
     </style>
 
 

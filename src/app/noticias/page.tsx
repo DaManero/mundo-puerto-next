@@ -1,100 +1,153 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const noticias = [
+import styles from "./page.module.css";
+
+type Category = "Editorial" | "Entrevista" | "Noticia";
+
+type Noticia = {
+  href: string;
+  title: string;
+  date: string;
+  image: string;
+  category: Category;
+};
+
+// El primer item del array es el destacado. Para publicar una nueva noticia, agregala al comienzo.
+const noticias: Noticia[] = [
   {
     href: "/noticias/editorial_practicaje",
     title: "Practicaje, pilotaje, baquía: una reforma que exige revisión técnica antes que ideológica",
     date: "05 de Agosto de 2026",
     image: "/noticias/img_noticias/editorial_practicaje.jpg",
+    category: "Editorial",
   },
   {
     href: "/noticias/entrevista_lourido",
-    title: "Entrevista a Laureano Lourido",
+    title: "Lourido: “No perdamos la esencia de los puertos”",
     date: "11 de Mayo de 2023",
     image: "/noticias/img_noticias/lourido_0101.jpg",
+    category: "Entrevista",
   },
   {
     href: "/noticias/entrevista_duran",
-    title: "Entrevista a Jorge Duran",
+    title: "Durán: “Un puerto verde es un puerto más competitivo”",
     date: "18 de Abril de 2023",
     image: "/noticias/img_noticias/duran_0101.jpg",
+    category: "Entrevista",
   },
   {
     href: "/noticias/entrevista_tarraubela",
-    title: "Entrevista Rodolfo Tarraubella",
+    title: "Tarraubella: “Ser sostenible es negocio”",
     date: "17 de Marzo de 2023",
     image: "/noticias/img_noticias/taraubella_0101.jpg",
+    category: "Entrevista",
   },
   {
     href: "/noticias/entrevista_ascensio",
-    title: "Entrevista al Ing. Luis Ascencio",
+    title: "Ascencio: “El liderazgo de la comunidad logística empieza por la autoridad portuaria local”",
     date: "19 de Diciembre de 2022",
     image: "/noticias/img_noticias/ascencio_01.jpg",
+    category: "Entrevista",
   },
   {
     href: "/noticias/noticia_02",
-    title: "Fray Jorge Bender: no hay arma mas poderosa que la educacion",
+    title: "Fray Jorge Bender: “No hay arma más poderosa que la educación”",
     date: "22 de Noviembre de 2022",
     image: "/noticias/img_noticias/bender_01.jpg",
+    category: "Noticia",
   },
   {
     href: "/noticias/noticia_01",
-    title: "Novedades Mundo Puerto",
+    title: "Se presentó la Fundación Mundo Puerto",
     date: "04 de Noviembre de 2022",
     image: "/noticias/img_noticias/not_blog_01.jpg",
+    category: "Noticia",
   },
 ];
 
+const kickerClass: Record<Category, string> = {
+  Editorial: styles.cardKickerEditorial,
+  Entrevista: styles.cardKickerEntrevista,
+  Noticia: styles.cardKickerNoticia,
+};
+
+const featuredKickerClass: Record<Category, string> = {
+  Editorial: styles.featuredKickerEditorial,
+  Entrevista: styles.featuredKickerEntrevista,
+  Noticia: styles.featuredKickerNoticia,
+};
+
 export default function NoticiasPage() {
+  const [featured, ...rest] = noticias;
+
+  const counts = noticias.reduce(
+    (acc, n) => {
+      acc[n.category] = (acc[n.category] ?? 0) + 1;
+      return acc;
+    },
+    {} as Record<Category, number>,
+  );
+
   return (
-    <main>
-      <section className="mp-subheader" style={{ backgroundImage: "url('/noticias/images/mp_img/slider_blog.jpg')" }}>
-        <div className="container">
-          <h1 className="title">Noticias</h1>
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <span className={styles.heroKicker}>Sala de prensa</span>
+          <h1 className={styles.heroTitle}>Noticias &amp; Editoriales</h1>
+          <p className={styles.heroSubtitle}>
+            Actualidad, análisis técnico y voces del sistema portuario, logístico y fluviomarítimo.
+            Un espacio de la Fundación Mundo Puerto para pensar el futuro del sector.
+          </p>
         </div>
       </section>
 
-      <section className="section mp-noticias-section">
-        <div className="container mp-noticias-list">
-          {noticias.map((item) => (
-            <article key={item.href} className="post-item isotope-item clearfix post has-post-thumbnail hentry">
-              <div className="image_frame post-photo-wrapper scale-with-grid image">
-                <div className="image_wrapper">
-                  <Link href={item.href}>
-                    <div className="mask"></div>
-                    <Image src={item.image} alt={item.title} width={420} height={260} className="scale-with-grid wp-post-image" />
-                  </Link>
-                </div>
+      <div className={styles.filterBar}>
+        <span className={styles.filterChipActive}>Todas · {noticias.length}</span>
+        <span className={styles.filterChip}>Editoriales · {counts.Editorial ?? 0}</span>
+        <span className={styles.filterChip}>Entrevistas · {counts.Entrevista ?? 0}</span>
+        <span className={styles.filterChip}>Noticias · {counts.Noticia ?? 0}</span>
+      </div>
+
+      <section className={styles.featured}>
+        <Link href={featured.href} className={styles.featuredCard}>
+          <div className={styles.featuredMedia}>
+            <Image
+              src={featured.image}
+              alt={featured.title}
+              width={800}
+              height={520}
+              priority
+            />
+          </div>
+          <div className={styles.featuredBody}>
+            <div className={styles.featuredMeta}>
+              <span className={featuredKickerClass[featured.category]}>{featured.category}</span>
+              <span className={styles.featuredDot} />
+              <span>{featured.date}</span>
+            </div>
+            <h2 className={styles.featuredTitle}>{featured.title}</h2>
+            <span className={styles.featuredCta}>Leer artículo</span>
+          </div>
+        </Link>
+      </section>
+
+      <section className={styles.grid}>
+        {rest.map((item) => (
+          <Link key={item.href} href={item.href} className={styles.card}>
+            <div className={styles.cardMedia}>
+              <div className={styles.cardKickerWrap}>
+                <span className={kickerClass[item.category]}>{item.category}</span>
               </div>
-              <div className="post-desc-wrapper">
-                <div className="post-desc">
-                  <div className="post-head">
-                    <div className="post-meta clearfix">
-                      <div className="author-date">
-                        <i className="icon-clock"></i>
-                        <span className="post-date updated"> {item.date}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="post-title">
-                    <h2 className="entry-title">
-                      <Link href={item.href}>{item.title}</Link>
-                    </h2>
-                  </div>
-                  <div className="post-footer">
-                    <div className="post-links">
-                      <i className="icon-doc-text"></i>
-                      <Link href={item.href} className="post-more">
-                        Leer Noticia
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+              <Image src={item.image} alt={item.title} width={520} height={330} />
+            </div>
+            <div className={styles.cardBody}>
+              <span className={styles.cardDate}>{item.date}</span>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <span className={styles.cardCta}>Leer más</span>
+            </div>
+          </Link>
+        ))}
       </section>
     </main>
   );

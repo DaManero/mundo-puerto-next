@@ -12,7 +12,8 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <title>Fundación Mundo Puerto</title>
-    <meta name="description" content="">
+    <meta name="description"
+        content="Se presentó la Fundación Mundo Puerto en un evento realizado en el buque Humberto M, ubicado en la dársena norte del Puerto Buenos Aires.">
     <meta name="author" content="">
 
     <!-- Mobile Specific Metas -->
@@ -25,7 +26,13 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900'>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Poppins:100,300,400,400italic,500,700,700italic'>
+    <link rel='stylesheet'
+        href='http://fonts.googleapis.com/css?family=Poppins:100,300,400,400italic,500,700,700italic'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel='stylesheet' href='../../css/global.css'>
@@ -33,19 +40,443 @@
     <link rel='stylesheet' href='../../content/company2/css/company2.css'>
     <link rel='stylesheet' href='../../content/company2/css/custom.css'>
 
+    <style>
+        :root {
+            --mp-font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
+            --mp-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --mp-ink: #0a1f45;
+            --mp-ink-soft: #2c3a4e;
+            --mp-muted: #6b7789;
+            --mp-line: #e5eaf1;
+            --mp-bg: #f5f7fa;
+            --mp-accent: #d18b3d;
+            --mp-navy: #172e59;
+            --mp-navy-deep: #0a1f45;
+        }
+
+        body:not(.template-slider) #Content {
+            padding-top: 0;
+        }
+
+        .mp-modern-article {
+            --gutter: 24px;
+            --main-w: 820px;
+            --wide-w: 820px;
+            display: grid;
+            grid-template-columns:
+                [full-start] minmax(var(--gutter), 1fr) [wide-start] minmax(0, calc((var(--wide-w) - var(--main-w)) / 2)) [main-start] minmax(0, var(--main-w)) [main-end] minmax(0, calc((var(--wide-w) - var(--main-w)) / 2)) [wide-end] minmax(var(--gutter), 1fr) [full-end];
+            row-gap: 40px;
+            margin: 0 0 96px;
+            font-family: var(--mp-font-sans);
+            color: var(--mp-ink-soft);
+            font-feature-settings: "ss01", "cv11";
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .mp-modern-article>* {
+            grid-column: main;
+        }
+
+        .mp-modern-article>.mp-wide {
+            grid-column: wide-start / wide-end;
+        }
+
+        .mp-modern-article>.mp-full {
+            grid-column: full-start / full-end;
+        }
+
+        .mp-modern-back {
+            margin-bottom: 8px;
+        }
+
+        .mp-modern-back a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 20px;
+            background: var(--mp-bg);
+            border-radius: 999px;
+            color: var(--mp-navy);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .mp-modern-back a:hover {
+            background: #e2e8f0;
+            transform: translateX(-2px);
+        }
+
+        /* HERO */
+        .mp-modern-hero {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            min-height: 520px;
+            background: var(--mp-navy-deep);
+            color: #fff;
+            margin: 0;
+        }
+
+        .mp-modern-hero-media {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .mp-modern-hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mp-modern-hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(10, 31, 69, 0.55) 0%,
+                    rgba(10, 31, 69, 0.25) 18%,
+                    rgba(10, 31, 69, 0.10) 40%,
+                    rgba(10, 31, 69, 0.55) 72%,
+                    rgba(10, 31, 69, 0.92) 100%);
+        }
+
+        .mp-modern-hero-body {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 56px clamp(24px, 6vw, 96px) 60px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mp-modern-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 3.5px;
+            color: var(--mp-accent);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .mp-modern-kicker::before {
+            content: "";
+            width: 24px;
+            height: 2px;
+            background: var(--mp-accent);
+            display: inline-block;
+        }
+
+        .mp-modern-title {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(32px, 3.6vw, 48px);
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin: 0 0 22px;
+            color: #fff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+            max-width: 720px;
+        }
+
+        .mp-modern-meta {
+            font-family: var(--mp-font-sans);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .mp-modern-meta .dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        /* BYLINE */
+        .mp-modern-byline {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 20px 24px;
+            background: var(--mp-bg);
+            border-left: 3px solid var(--mp-accent);
+            border-radius: 12px;
+        }
+
+        .mp-modern-byline-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--mp-navy) 0%, var(--mp-navy-deep) 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mp-font-serif);
+            font-style: italic;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: -1px;
+        }
+
+        .mp-modern-byline-kicker {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 10px;
+            color: var(--mp-accent);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .mp-modern-byline-name {
+            font-family: var(--mp-font-sans);
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--mp-ink);
+            margin: 2px 0 0;
+        }
+
+        .mp-modern-byline-role {
+            font-family: var(--mp-font-sans);
+            font-size: 13px;
+            color: var(--mp-muted);
+            margin: 2px 0 0;
+        }
+
+        /* BODY */
+        .mp-modern-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mp-modern-lead {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(19px, 1.5vw, 22px);
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--mp-ink);
+            margin: 0 0 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--mp-line);
+        }
+
+        .mp-modern-section {
+            margin: 0 0 44px;
+        }
+
+        .mp-modern-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .mp-modern-h2 {
+            font-family: var(--mp-font-serif);
+            font-size: clamp(24px, 2.2vw, 30px);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--mp-ink);
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin: 0 0 20px;
+        }
+
+        .mp-modern-p {
+            font-family: var(--mp-font-sans);
+            font-size: 17px;
+            line-height: 1.75;
+            margin: 0 0 20px;
+            color: var(--mp-ink-soft);
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        .mp-modern-p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mp-modern-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mp-modern-list li {
+            font-family: var(--mp-font-sans);
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: var(--mp-ink-soft);
+            padding: 16px 20px 16px 52px;
+            background: var(--mp-bg);
+            border-radius: 10px;
+            position: relative;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        .mp-modern-list li::before {
+            content: "";
+            position: absolute;
+            left: 22px;
+            top: 26px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--mp-accent);
+        }
+
+        .mp-modern-note {
+            font-family: var(--mp-font-sans);
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--mp-muted);
+            margin: 30px 0 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--mp-line);
+            font-style: italic;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* FIGURE */
+        .mp-modern-figure {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 24px 55px rgba(10, 31, 69, 0.14);
+            margin: 8px 0 44px;
+        }
+
+        .mp-modern-figure img {
+            width: 100%;
+            display: block;
+        }
+
+        /* GALLERY */
+        .mp-modern-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 8px 0 8px;
+        }
+
+        .mp-modern-gallery figure {
+            margin: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(10, 31, 69, 0.12);
+            aspect-ratio: 4 / 3;
+            background: var(--mp-bg);
+        }
+
+        .mp-modern-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .mp-modern-hero {
+                aspect-ratio: 3 / 2;
+                min-height: 440px;
+            }
+
+            .mp-modern-hero-body {
+                padding: 40px 32px 40px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .mp-modern-article {
+                --gutter: 18px;
+                row-gap: 32px;
+                margin: 0 0 60px;
+            }
+
+            .mp-modern-hero {
+                aspect-ratio: 4 / 5;
+                min-height: 460px;
+            }
+
+            .mp-modern-hero-body {
+                padding: 28px 22px 32px;
+            }
+
+            .mp-modern-byline {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .mp-modern-byline-avatar {
+                margin: 0 auto;
+            }
+
+            .mp-modern-lead {
+                font-size: 18px;
+            }
+
+            .mp-modern-p,
+            .mp-modern-list li {
+                font-size: 16px;
+            }
+
+            .mp-modern-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
 </head>
 
-<body class="button-default layout-full-width header-transparent minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
+<body
+    class="button-default layout-full-width no-content-padding header-transparent minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
     <div id="Wrapper">
-        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3" style="width: 1920px;height: 100px;">
+        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3">
             <header id="Header">
                 <div class="header_placeholder"></div>
                 <div id="Top_bar">
                     <div class="container">
                         <div class="column one">
-                            <div class="top_bar_left clearfix" style="width: 1200px;">
+                            <div class="top_bar_left clearfix" style="width: 1300px;">
                                 <div class="logo">
-                                    <a id="logo" href="index.html" title="BeCompany 2 - BeTheme" data-height="55" data-padding="30"><img class="logo-main scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"><img class="logo-sticky scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"><img class="logo-mobile scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"><img class="logo-mobile-sticky scale-with-grid" src="../../images/mp_img/logoMP.png" data-retina="../../images/mp_img/logoMP.png" data-height="40"></a>
+                                    <a id="logo" href="index.html" title="BeCompany 2 - BeTheme" data-height="55"
+                                        data-padding="30"><img class="logo-main scale-with-grid"
+                                            src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-sticky scale-with-grid" src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-mobile scale-with-grid" src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"><img
+                                            class="logo-mobile-sticky scale-with-grid"
+                                            src="../../images/mp_img/logoMP.png"
+                                            data-retina="../../images/mp_img/logoMP.png" data-height="40"></a>
                                 </div>
                                 <div class="menu_wrapper">
                                     <nav id="menu">
@@ -78,113 +509,109 @@
                 </div>
             </header>
         </div>
-        <div style="margin-left: 1130px; margin-top: 20px;">
-            <a href="../blog.html"><span style="font-size:small" > « / Volver a <strong>NOTICIAS</strong></span></a>
-        </div>
-
         <div id="Content">
-    
-            <div class="content_wrapper clearfix">
-                <div class="sections_group">
-                    <div id="post-62" class="no-title share-simple post format-standard has-post-thumbnail hentry">
-                            <div class="section_wrapper clearfix">
-                                <div class="column one post-header">
-                                    <div class="title_wrapper">
-                                        <div class="post-meta clearfix">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column one single-photo-wrapper image">
-                                    <div class="image_frame scale-with-grid">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="post-wrapper-content">
-                            
-                            <div class="section mcb-section" style="padding-top:10px; padding-bottom:0px">
-                                <div class="section_wrapper mcb-section-inner">
-                                    
-                                    <div class="wrap mcb-wrap one valign-top clearfix">
-                                        <div class="mcb-wrap-inner">
-                                            <div class="column mcb-column one-fifth column_placeholder">
-                                                <div class="placeholder">
-                                                    &nbsp;
-                                                </div>
-                                            </div>
-                                            <div class="column mcb-column three-fifth column_column">
-                                                
-                                                <div class="column_attr clearfix">
-                                                    <h1>
-                                                        Se presentó la Fundación Mundo Puerto
-                                                    </h1>
+            <article class="mp-modern-article">
 
-                                                    <h4>
-                                                        En un evento celebrado en el buque Humberto M, ubicado en la dársena norte del Puerto Buenos Aires, 
-                                                        referentes técnicos y profesionales del mundo logístico y portuario presentaron la fundación Mundo 
-                                                        Puerto, que buscará conectar a las distintas instituciones públicas y privadas del sector para un 
-                                                        desarrollo armónico y federal, con una fuerte mirada social.
-                                                    </h4>
-                                                    <hr>
-                                                    <img src="img_noticias/not_01_01.jpg" alt="">
-                                                    <hr>
-                                                    <p class="big">
-                                                           El lanzamiento estuvo encabezado por<strong> Leonardo Salom, presidente de la Fundación, quien estuvo acompañado 
-                                                        por el sacerdote franciscano Fray Jorge Bender, cuyo trabajo misionero en Mozambique fue destacado por 
-                                                        el Vaticano, y el vicepresidente Mauricio Lambertucci</strong>, presidente de la Comisión de Estudios de Costos 
-                                                        del Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires.
-                                                        <br>  <br>
-                                                        <em>“Nuestro ADN portuario nos llevó a dar un paso más en la búsqueda del desarrollo portuario federal, con una 
-                                                        logística más eficiente en el marco de un crecimiento que llegue a toda la comunidad”</em> , destacó Salom en 
-                                                        la presentación.
-    
-                                                        <strong>Mundo Puerto se propone aportar al desarrollo de la logística nacional, para conectar cada punto de nuestro país 
-                                                        con el puerto como eje</strong>, generando nuevas oportunidades para el impulso de las economías regionales.
-                                                        <br>  <br>
-                                                        <em>“Consideramos esencial que el desarrollo comercial, el desarrollo que ofrecen los puertos se dé en forma integrada 
-                                                        a la comunidad, y no de espaldas a su gente como pasó durante tantos años en tantos puertos”</em>, agregó Salom, que 
-                                                        estará acompañado en la conducción de Mundo Puerto por destacados referentes y profesionales del sector. 
-                                                        <br>  <br>
-                                                        <strong>El padre Bender</strong>, por su parte, centro sus palabras en su experiencia misionera en la aldea de Jecua, Mozambique,
-                                                        y remarcó la importancia de la educación: <em>“Mandela, siempre presente en toda África, decía que la educación es el 
-                                                        arma más poderosa, la más importante para cambiar la realidad, y el trabajo que ustedes se proponen hacer apunta 
-                                                        precisamente a eso, a dar alas para que las personas puedan alcanzar su pleno potencial”</em>. 
-                                                        <hr>
-                                                        <img src="img_noticias/not_01_02.jpg" alt="">
-                                                        <img src="img_noticias/not_01_03.jpg" alt="">
-                                                        <img src="img_noticias/not_01_04.jpg" alt="">
 
-                                                        <hr>
+                <header class="mp-modern-hero mp-full">
+                    <div class="mp-modern-hero-media">
+                        <img src="img_noticias/not_01_01.jpg"
+                            alt="Presentación de la Fundación Mundo Puerto en el buque Humberto M">
+                    </div>
+                    <div class="mp-modern-hero-body">
+                        <span class="mp-modern-kicker">Noticia</span>
+                        <h1 class="mp-modern-title">
+                            Se presentó la Fundación Mundo Puerto
+                        </h1>
+                    </div>
+                </header>
 
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="mp-modern-back">
+                    <a href="../blog.html">« Volver a Noticias</a>
+                </div>
 
-                            <div class="section section-post-about">
-                                <div class="section_wrapper clearfix"></div>
-                            </div>
-                        </div>
+                <aside class="mp-modern-byline">
+                    <div class="mp-modern-byline-avatar">FMP</div>
+                    <div>
+                        <span class="mp-modern-byline-kicker">Noticia · 04 de Noviembre de 2022</span>
+                        <p class="mp-modern-byline-name">Fundación Mundo Puerto</p>
+                        <p class="mp-modern-byline-role">Equipo editorial</p>
+                    </div>
+                </aside>
+
+                <div class="mp-modern-body">
+
+                    <p class="mp-modern-lead">
+                        En un evento celebrado en el buque Humberto M, ubicado en la dársena norte del Puerto Buenos
+                        Aires, referentes técnicos y profesionales del mundo logístico y portuario presentaron la
+                        Fundación Mundo Puerto, que buscará conectar a las distintas instituciones públicas y privadas
+                        del sector para un desarrollo armónico y federal, con una fuerte mirada social.
+                    </p>
+
+                    <section class="mp-modern-section">
+                        <p class="mp-modern-p">
+                            El lanzamiento estuvo encabezado por <strong>Leonardo Salom, presidente de la
+                                Fundación</strong>, quien estuvo acompañado por el sacerdote franciscano
+                            <strong>Fray Jorge Bender</strong>, cuyo trabajo misionero en Mozambique fue destacado por
+                            el Vaticano, y por el vicepresidente <strong>Mauricio Lambertucci</strong>, presidente de
+                            la Comisión de Estudios de Costos del Consejo Profesional de Ciencias Económicas de la
+                            Ciudad Autónoma de Buenos Aires.
+                        </p>
+                        <p class="mp-modern-p">
+                            <em>“Nuestro ADN portuario nos llevó a dar un paso más en la búsqueda del desarrollo
+                                portuario federal, con una logística más eficiente en el marco de un crecimiento que
+                                llegue a toda la comunidad”</em>, destacó Salom en la presentación.
+                        </p>
+                        <p class="mp-modern-p">
+                            <strong>Mundo Puerto se propone aportar al desarrollo de la logística nacional, para
+                                conectar cada punto de nuestro país con el puerto como eje</strong>, generando nuevas
+                            oportunidades para el impulso de las economías regionales.
+                        </p>
+                        <p class="mp-modern-p">
+                            <em>“Consideramos esencial que el desarrollo comercial —el que ofrecen los puertos— se dé
+                                en forma integrada a la comunidad, y no de espaldas a su gente como pasó durante tantos
+                                años en tantos puertos”</em>, agregó Salom, que estará acompañado en la conducción de
+                            Mundo Puerto por destacados referentes y profesionales del sector.
+                        </p>
+                        <p class="mp-modern-p">
+                            <strong>El padre Bender</strong>, por su parte, centró sus palabras en su experiencia
+                            misionera en la aldea de Jecua, Mozambique, y remarcó la importancia de la educación:
+                            <em>“Mandela, siempre presente en toda África, decía que la educación es el arma más
+                                poderosa, la más importante para cambiar la realidad; el trabajo que ustedes se
+                                proponen hacer apunta precisamente a eso, a dar alas para que las personas puedan
+                                alcanzar su pleno potencial”</em>.
+                        </p>
+                    </section>
+
+                    <div class="mp-modern-gallery mp-wide">
+                        <figure>
+                            <img src="img_noticias/not_01_02.jpg" alt="Presentación de Mundo Puerto">
+                        </figure>
+                        <figure>
+                            <img src="img_noticias/not_01_03.jpg" alt="Referentes portuarios en el lanzamiento">
+                        </figure>
+                        <figure>
+                            <img src="img_noticias/not_01_04.jpg" alt="Autoridades y equipo de Mundo Puerto">
+                        </figure>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </div>
+    <br> <br>
+    <footer id="Footer" class="clearfix">
+        <div class="footer_copy">
+            <div class="container">
+                <div class="column one">
+                    <a id="back_to_top" class="button button_js" href="#"><i class="icon-up-open-big"></i></a>
+                    <div class="copyright">
+                        &copy; Fundación Mundo Puerto <a target="_blank" rel="nofollow" href="#"></a>
                     </div>
                 </div>
             </div>
         </div>
-        <br> <br>
-        <footer id="Footer" class="clearfix">
-            <div class="footer_copy">
-                <div class="container">
-                    <div class="column one">
-                        <a id="back_to_top" class="button button_js" href="#"><i class="icon-up-open-big"></i></a>
-                        <div class="copyright">
-                            &copy; Fundación Mundo Puerto <a target="_blank" rel="nofollow" href="#"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    </footer>
     </div>
 
     <!-- side menu -->
@@ -208,25 +635,6 @@
     <script src="../../js/animations/animations.js"></script>
     <script src="../../js/translate3d.js"></script>
     <script src="../../js/scripts.js"></script>
-
-    <style>
-        #gallery-1 {
-                                                                    margin: auto;
-                                                                }
-                                                                #gallery-1 .gallery-item {
-                                                                    float: left;
-                                                                    margin-top: 10px;
-                                                                    text-align: center;
-                                                                    width: 33.33%;
-                                                                }
-                                                                #gallery-1 img {
-                                                                    border: 2px solid #cfcfcf;
-                                                                }
-                                                                #gallery-1 .gallery-caption {
-                                                                    margin-left: 0;
-                                                                }
-    </style>
-
 
 </body>
 

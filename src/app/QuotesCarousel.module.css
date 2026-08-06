@@ -1,0 +1,241 @@
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+.stage {
+  position: relative;
+  padding: 40px clamp(36px, 4.5vw, 56px) 20px;
+  background: #ffffff;
+  color: #2c3a4e;
+  border: 1px solid #e5eaf1;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(10, 31, 69, 0.08);
+  overflow: hidden;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage::before {
+  content: "\201C";
+  position: absolute;
+  top: 20px;
+  left: clamp(28px, 4vw, 44px);
+  font-family: "Lora", Georgia, serif;
+  font-size: 56px;
+  line-height: 1;
+  color: #d18b3d;
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.stage::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(209, 139, 61, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.track {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: clamp(46px, 5vw, 62px);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  padding-left: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  margin: 0;
+}
+
+.slideActive {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.text {
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.6;
+  color: #0a1f45;
+  margin: 0 0 18px;
+  letter-spacing: -0.005em;
+  max-width: 720px;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.authorName {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0a1f45;
+  letter-spacing: 0.1px;
+  margin: 0;
+}
+
+.authorRole {
+  font-size: 11.5px;
+  line-height: 1.2;
+  color: #d18b3d;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 2px 0 0;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: #172e59;
+  text-decoration: none;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: fit-content;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(23, 46, 89, 0.16);
+  transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+}
+
+.readMore::after {
+  content: "→";
+  font-size: 13px;
+  color: #d18b3d;
+}
+
+.readMore:hover {
+  color: #0a1f45;
+  border-color: #d18b3d;
+  gap: 10px;
+}
+
+/* CONTROLS DENTRO DEL CUADRO */
+.controls {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #eef1f6;
+}
+
+.dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.dot {
+  width: 16px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(10, 31, 69, 0.14);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.dot:hover {
+  background: rgba(10, 31, 69, 0.3);
+}
+
+.dotActive {
+  background: #d18b3d;
+  width: 26px;
+}
+
+.arrows {
+  display: flex;
+  gap: 6px;
+}
+
+.arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(10, 31, 69, 0.14);
+  color: #172e59;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.arrow:hover {
+  color: #0a1f45;
+  border-color: rgba(209, 139, 61, 0.5);
+  background: rgba(209, 139, 61, 0.05);
+}
+
+.arrow:focus-visible {
+  outline: 2px solid #d18b3d;
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .stage {
+    height: 400px;
+    padding: 36px 22px 18px;
+  }
+
+  .stage::before {
+    font-size: 46px;
+    left: 20px;
+    top: 16px;
+  }
+
+  .track {
+    padding-left: 36px;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dots {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+}

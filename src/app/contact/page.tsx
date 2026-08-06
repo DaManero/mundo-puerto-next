@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import Link from "next/link";
+
+import styles from "./page.module.css";
 
 type ContactState = {
   name: string;
@@ -32,9 +33,7 @@ export default function ContactPage() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
 
@@ -52,115 +51,152 @@ export default function ContactPage() {
       setSuccess("Tu mensaje fue enviado correctamente. Gracias por contactarte.");
       setForm(initialState);
     } catch {
-      setError("Ocurrio un error de red. Intenta nuevamente en unos minutos.");
+      setError("Ocurrió un error de red. Intentá nuevamente en unos minutos.");
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <main>
-      <section className="mp-subheader" style={{ backgroundImage: "url('/contact/images/mp_img/slider_contacto.jpg')" }}>
-        <div className="container">
-          <h1 className="title">Contacto</h1>
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <span className={styles.heroKicker}>Contacto</span>
+          <h1 className={styles.heroTitle}>Escribinos</h1>
+          <p className={styles.heroSubtitle}>
+            ¿Tenés una consulta, propuesta o querés sumarte al trabajo de la Fundación? Contanos
+            en qué te podemos ayudar y respondemos a la brevedad.
+          </p>
         </div>
       </section>
 
-      <section className="section mcb-section" style={{ paddingTop: "100px", paddingBottom: "60px" }}>
-        <div className="section_wrapper mcb-section-inner">
-          <div className="wrap mcb-wrap one-second valign-top clearfix" style={{ padding: "0 4% 0 2%" }}>
-            <div className="mcb-wrap-inner">
-              <div className="column mcb-column one column_column">
-                <div className="column_attr clearfix">
-                  <h2>Envíanos un mensaje</h2>
+      <div className={styles.container}>
+        <aside className={styles.info}>
+          <span className={styles.infoKicker}>Datos institucionales</span>
+          <h2 className={styles.infoTitle}>Fundación Mundo Puerto</h2>
+          <p className={styles.infoLead}>
+            Espacio de encuentro de profesionales del sistema portuario, logístico y
+            fluviomarítimo argentino.
+          </p>
 
-                  <form id="contactform" onSubmit={handleSubmit} className="mp-contact-form">
-                    <div className="column one-second">
-                      <input
-                        placeholder="Nombre"
-                        type="text"
-                        name="name"
-                        value={form.name}
-                        onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-                        required
-                      />
-                    </div>
-                    <div className="column one-second">
-                      <input
-                        placeholder="Correo electrónico"
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-                        required
-                      />
-                    </div>
-                    <div className="column one">
-                      <input
-                        placeholder="Asunto"
-                        type="text"
-                        name="subject"
-                        value={form.subject}
-                        onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
-                        required
-                      />
-                    </div>
-                    <div className="column one">
-                      <textarea
-                        placeholder="Mensaje"
-                        name="message"
-                        rows={10}
-                        value={form.message}
-                        onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-                        required
-                      />
-                    </div>
-                    <div className="column one">
-                      <button type="submit" disabled={loading} className="button button_size_2 button_theme button_js">
-                        <span className="button_label">{loading ? "Enviando..." : "Enviar Mensaje"}</span>
-                      </button>
-                    </div>
-                  </form>
-
-                  {error ? <p className="mp-form-error">{error}</p> : null}
-                  {success ? <p className="mp-form-success">{success}</p> : null}
-                </div>
-              </div>
-            </div>
+          <div className={styles.infoBlock}>
+            <span className={styles.infoLabel}>Correo electrónico</span>
+            <p className={styles.infoText}>
+              <a href="mailto:info@mundopuerto.ar">info@mundopuerto.ar</a>
+            </p>
           </div>
 
-          <div className="wrap mcb-wrap one-second valign-top clearfix" style={{ padding: "0 2% 0 4%" }}>
-            <div className="mcb-wrap-inner">
-              <div className="column mcb-column one column_column">
-                <div className="column_attr clearfix">
-                  <h2>Contacto</h2>
-                  <h6>Correo Electrónico</h6>
-                  <p>info@mundopuerto.ar</p>
+          <div className={styles.infoBlock}>
+            <span className={styles.infoLabel}>Oficinas</span>
+            <p className={styles.infoText}>
+              Julio Argentino Roca 710, Piso 10
+              <br />
+              CABA, Argentina
+            </p>
+          </div>
 
-                  <h6>Oficinas</h6>
-                  <p>
-                    Viamonte 723, Piso 6, Of 24
-                    <br />
-                    CABA, Argentina
-                  </p>
-
-                  <h6>Seguinos...</h6>
-                  <p style={{ fontSize: "28px", lineHeight: "40px" }}>
-                    <a href="https://twitter.com/MundoPuerto" target="_blank" rel="noreferrer">
-                      <i className="icon-twitter-circled"></i>
-                    </a>
-                  </p>
-
-                  <p>
-                    Si preferis, tambien podes visitar la seccion de <Link href="/about">Nosotros</Link> para conocer
-                    mas sobre la Fundacion.
-                  </p>
-                </div>
-              </div>
+          <div className={styles.infoBlock}>
+            <span className={styles.infoLabel}>Seguinos</span>
+            <div className={styles.socials}>
+              <a
+                href="https://twitter.com/MundoPuerto"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.socialLink}
+                aria-label="X / Twitter de Fundación Mundo Puerto"
+              >
+                <i className="icon-twitter-circled" aria-hidden="true"></i>
+              </a>
             </div>
           </div>
-        </div>
-      </section>
+        </aside>
+
+        <section className={styles.formCard}>
+          <div className={styles.formHead}>
+            <span className={styles.formKicker}>Formulario</span>
+            <h2 className={styles.formTitle}>Envianos un mensaje</h2>
+            <p className={styles.formLead}>
+              Completá los campos y nos pondremos en contacto lo antes posible.
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className={styles.form} noValidate>
+            <div className={styles.field}>
+              <label htmlFor="contact-name" className={styles.label}>
+                Nombre
+              </label>
+              <input
+                id="contact-name"
+                className={styles.input}
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                value={form.name}
+                onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
+                required
+                autoComplete="name"
+              />
+            </div>
+
+            <div className={styles.field}>
+              <label htmlFor="contact-email" className={styles.label}>
+                Correo electrónico
+              </label>
+              <input
+                id="contact-email"
+                className={styles.input}
+                type="email"
+                name="email"
+                placeholder="nombre@dominio.com"
+                value={form.email}
+                onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
+                required
+                autoComplete="email"
+              />
+            </div>
+
+            <div className={styles.fieldFull}>
+              <label htmlFor="contact-subject" className={styles.label}>
+                Asunto
+              </label>
+              <input
+                id="contact-subject"
+                className={styles.input}
+                type="text"
+                name="subject"
+                placeholder="¿Sobre qué querés escribirnos?"
+                value={form.subject}
+                onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
+                required
+              />
+            </div>
+
+            <div className={styles.fieldFull}>
+              <label htmlFor="contact-message" className={styles.label}>
+                Mensaje
+              </label>
+              <textarea
+                id="contact-message"
+                className={styles.textarea}
+                name="message"
+                rows={8}
+                placeholder="Escribinos tu consulta o propuesta..."
+                value={form.message}
+                onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
+                required
+              />
+            </div>
+
+            <div className={styles.actions}>
+              <button type="submit" className={styles.submit} disabled={loading}>
+                {loading ? "Enviando..." : "Enviar mensaje"}
+              </button>
+              {error ? <p className={styles.error}>{error}</p> : null}
+              {success ? <p className={styles.success}>{success}</p> : null}
+            </div>
+          </form>
+        </section>
+      </div>
     </main>
   );
 }

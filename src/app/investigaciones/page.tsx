@@ -1,59 +1,82 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const categorias = [
-  {
-    href: "/investigaciones/puerto-seco",
-    title: "Puertos Secos",
-    image: "/investigaciones/images/mp_img/ptoseco_seccion.jpg",
-  },
+import styles from "./page.module.css";
+
+type Categoria = {
+  href: string;
+  title: string;
+  kicker: string;
+  description: string;
+  image: string;
+};
+
+const categorias: Categoria[] = [
   {
     href: "/investigaciones/puertos",
     title: "Puertos",
+    kicker: "Categoría",
+    description:
+      "Estudios sobre gestión portuaria, integración puerto-ciudad, hidrovías y competitividad del sistema fluviomarítimo argentino.",
     image: "/investigaciones/images/mp_img/puerto_seccion.jpg",
+  },
+  {
+    href: "/investigaciones/puerto-seco",
+    title: "Puertos Secos",
+    kicker: "Categoría",
+    description:
+      "Investigaciones sobre nodos logísticos interiores, corredores bioceánicos y el rol de los puertos secos en el desarrollo federal.",
+    image: "/investigaciones/images/mp_img/ptoseco_seccion.jpg",
   },
   {
     href: "/investigaciones/ods",
     title: "ODS",
+    kicker: "Categoría",
+    description:
+      "Informes sobre la aplicación de los Objetivos de Desarrollo Sostenible al sector portuario, logístico y de la Marina Mercante.",
     image: "/investigaciones/images/mp_img/ods_seccion.jpg",
   },
 ];
 
 export default function InvestigacionesPage() {
   return (
-    <main>
-      <section className="mp-subheader" style={{ backgroundImage: "url('/investigaciones/images/mp_img/slider_investigacion.jpg')" }}>
-        <div className="container">
-          <h1 className="title">Investigaciones & Informes</h1>
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <span className={styles.heroKicker}>Centro de estudios</span>
+          <h1 className={styles.heroTitle}>Investigaciones &amp; Informes</h1>
+          <p className={styles.heroSubtitle}>
+            Producción propia de la Fundación Mundo Puerto: análisis técnicos, informes sectoriales
+            y trabajos de investigación aplicada sobre el sistema portuario, logístico y
+            fluviomarítimo.
+          </p>
         </div>
       </section>
 
-      <section className="section" style={{ padding: "80px 0" }}>
-        <div className="container">
-          <h5 className="flv_style_4" style={{ color: "#2556cf", marginBottom: "30px" }}>
-            Investigaciones e Informes por Categorias
-          </h5>
-          <div className="mp-categorias-grid">
-            {categorias.map((categoria) => (
-              <Link key={categoria.title} href={categoria.href} className="mp-card-link">
-                <article className="trailer_box">
-                  <Image
-                    className="scale-with-grid"
-                    src={categoria.image}
-                    alt={categoria.title}
-                    width={370}
-                    height={260}
-                  />
-                  <div className="desc">
-                    <div className="subtitle">VER TODAS</div>
-                    <h2>{categoria.title}</h2>
-                    <div className="line"></div>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+      <header className={styles.sectionHead}>
+        <div className={styles.sectionHeadCopy}>
+          <span className={styles.sectionKicker}>Explorá por categoría</span>
+          <h2 className={styles.sectionTitle}>Áreas de trabajo</h2>
         </div>
+        <span className={styles.sectionCount}>{categorias.length} categorías</span>
+      </header>
+
+      <section className={styles.grid}>
+        {categorias.map((categoria) => (
+          <Link key={categoria.href} href={categoria.href} className={styles.card}>
+            <div className={styles.cardMedia}>
+              <div className={styles.cardKickerWrap}>
+                <span className={styles.cardKicker}>{categoria.kicker}</span>
+              </div>
+              <Image src={categoria.image} alt={categoria.title} width={520} height={390} />
+            </div>
+            <div className={styles.cardBody}>
+              <h3 className={styles.cardTitle}>{categoria.title}</h3>
+              <p className={styles.cardDesc}>{categoria.description}</p>
+              <span className={styles.cardCta}>Ver investigaciones</span>
+            </div>
+          </Link>
+        ))}
       </section>
     </main>
   );

@@ -5,6 +5,10 @@ const INVESTIGACIONES_ALIASES: Record<string, string> = {
   "puerto-seco": "/investigaciones/puerto_seco_post/puertoSecopost.html",
   puertos: "/investigaciones/puerto_post/puertoPost.html",
   ods: "/investigaciones/ods_post/odspost.html",
+  // Aliases para desambiguar los tres post01.html (uno por categoría)
+  puertos_relevamientos: "/investigaciones/puerto_post/post01.html",
+  puerto_seco_informe: "/investigaciones/puerto_seco_post/post01.html",
+  ods_introduccion: "/investigaciones/ods_post/post01.html",
 };
 
 const NOTICIAS_ALIASES: Record<string, string> = {
