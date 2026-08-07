@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,6 +20,7 @@ const SITE_NAME = "Fundación Mundo Puerto";
 const SITE_DESCRIPTION =
   "Fundación argentina dedicada a la investigación, formación y desarrollo de proyectos para una comunidad portuaria, logística y fluviomarítima eficiente, federal y sustentable.";
 const SITE_OG_IMAGE = "/images/mp_img/logoMP.png";
+const GA_ID = "G-ZX21TC7NYS";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -120,6 +122,7 @@ export default function RootLayout({
           <Footer />
         </div>
       </body>
+      <GoogleAnalytics gaId={GA_ID} />
     </html>
   );
 }
