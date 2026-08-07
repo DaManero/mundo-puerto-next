@@ -42,10 +42,8 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   formatDetection: { telephone: false, email: false, address: false },
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: SITE_URL,
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Puertos, logística y sustentabilidad`,
     description: SITE_DESCRIPTION,
