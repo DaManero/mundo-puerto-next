@@ -21,6 +21,29 @@ const NOTICIAS_ALIASES: Record<string, string> = {
   noticia_02: "/noticias/noticia_02.html",
 };
 
+export const NOTICIAS_SLUGS = Object.keys(NOTICIAS_ALIASES);
+export const INVESTIGACIONES_SLUGS = [
+  "puertos",
+  "puerto-seco",
+  "ods",
+  "puertos_relevamientos",
+  "puerto_seco_informe",
+  "ods_introduccion",
+  "columna_cherubini",
+  "columna_ferreyra",
+  "columna_goicochea2",
+  "columna_gorgone",
+  "columna_leonardi",
+  "columna_leonardi_02",
+  "columna_moro",
+  "columna_peyregne",
+  "columna_pinero",
+  "columna_puertolas",
+  "columna_sposaro",
+  "columna_yarochevski",
+  "opinion_01",
+];
+
 const PERFILES_ALIASES: Record<string, string> = {
   abarezzi: "/perfiles/abarezzi.html",
   adocarmo: "/perfiles/adocarmo.html",
@@ -33,6 +56,8 @@ const PERFILES_ALIASES: Record<string, string> = {
   pgigliotti: "/perfiles/pgigliotti.html",
   vpinero: "/perfiles/vpinero.html",
 };
+
+export const PERFILES_SLUGS = Object.keys(PERFILES_ALIASES);
 
 async function findHtmlBySlug(rootDir: string, slug: string): Promise<string | null> {
   const entries = await readdir(rootDir, { withFileTypes: true });

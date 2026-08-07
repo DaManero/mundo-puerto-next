@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Noticias y editoriales portuarias",
+  description:
+    "Editoriales, entrevistas y novedades sobre el sistema portuario, logístico y fluviomarítimo argentino, con voces del sector.",
+  alternates: { canonical: "/noticias" },
+  openGraph: { url: "/noticias", title: "Noticias — Fundación Mundo Puerto" },
+};
 
 type Category = "Editorial" | "Entrevista" | "Noticia";
 

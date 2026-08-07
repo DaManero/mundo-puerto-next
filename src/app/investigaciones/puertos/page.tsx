@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
+
 import { CategoriaPage, type CategoriaPost } from "../CategoriaPage";
+
+export const metadata: Metadata = {
+  title: "Investigaciones sobre Puertos",
+  description:
+    "Estudios y columnas sobre gestión portuaria, hidrovía, integración puerto-ciudad y competitividad del sistema fluviomarítimo argentino.",
+  alternates: { canonical: "/investigaciones/puertos" },
+  openGraph: { url: "/investigaciones/puertos", title: "Investigaciones sobre Puertos" },
+};
 
 const posts: CategoriaPost[] = [
   {

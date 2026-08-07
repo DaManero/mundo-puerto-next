@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
+
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Consejo Consultivo",
+  description:
+    "Equipo interdisciplinario de profesionales vinculados a las ciencias del mar y a los ecosistemas acuáticos continentales que aporta visión y experiencia al desarrollo portuario y logístico sustentable.",
+  alternates: { canonical: "/consultivo" },
+  openGraph: { url: "/consultivo", title: "Consejo Consultivo — Fundación Mundo Puerto" },
+};
 
 type Objetivo = {
   verb: string;

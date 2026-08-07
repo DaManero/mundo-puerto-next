@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Perfiles del equipo",
+  description:
+    "Consejo directivo y equipo interdisciplinario de la Fundación Mundo Puerto: profesionales vinculados a la actividad portuaria, logística y a las ciencias del mar.",
+  alternates: { canonical: "/perfiles" },
+  openGraph: { url: "/perfiles", title: "Perfiles — Fundación Mundo Puerto" },
+};
 
 const perfiles = [
   { slug: "lsalom", nombre: "Dr. Leonardo Salom" },

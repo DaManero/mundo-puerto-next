@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Nosotros — Misión, visión y objetivos",
+  description:
+    "Conocé la Fundación Mundo Puerto: una organización que conecta los puertos con sus comunidades y promueve el desarrollo técnico, la formación profesional y proyectos sustentables.",
+  alternates: { canonical: "/about" },
+  openGraph: { url: "/about", title: "Nosotros — Fundación Mundo Puerto" },
+};
 
 const manifesto = [
   {

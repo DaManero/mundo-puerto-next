@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
+
 import { CategoriaPage, type CategoriaPost } from "../CategoriaPage";
+
+export const metadata: Metadata = {
+  title: "Investigaciones sobre ODS aplicados a puertos",
+  description:
+    "Análisis y proyectos que aplican los Objetivos de Desarrollo Sostenible al sector portuario y logístico argentino.",
+  alternates: { canonical: "/investigaciones/ods" },
+  openGraph: { url: "/investigaciones/ods", title: "Investigaciones sobre ODS" },
+};
 
 const posts: CategoriaPost[] = [
   {

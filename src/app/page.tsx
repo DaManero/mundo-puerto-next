@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import QuotesCarousel from "./QuotesCarousel";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Fundación Mundo Puerto | Puertos, logística y sustentabilidad",
+  description:
+    "Fundación argentina que promueve investigaciones, formación y proyectos para una comunidad portuaria, logística y fluviomarítima eficiente, federal y sustentable.",
+  alternates: { canonical: "/" },
+  openGraph: { url: "/", title: "Fundación Mundo Puerto" },
+};
 
 type Publicacion = {
   href: string;

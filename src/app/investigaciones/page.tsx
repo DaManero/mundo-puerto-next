@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Investigaciones e informes portuarios",
+  description:
+    "Estudios técnicos, informes y análisis aplicados sobre gestión portuaria, puertos secos, hidrovía y aplicación de los Objetivos de Desarrollo Sostenible al sector portuario argentino.",
+  alternates: { canonical: "/investigaciones" },
+  openGraph: { url: "/investigaciones", title: "Investigaciones — Fundación Mundo Puerto" },
+};
 
 type Categoria = {
   href: string;

@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
+
 import { CategoriaPage, type CategoriaPost } from "../CategoriaPage";
+
+export const metadata: Metadata = {
+  title: "Investigaciones sobre Puertos Secos",
+  description:
+    "Estudios sobre nodos logísticos interiores, corredores bioceánicos y el rol de los puertos secos en el desarrollo federal argentino.",
+  alternates: { canonical: "/investigaciones/puerto-seco" },
+  openGraph: { url: "/investigaciones/puerto-seco", title: "Investigaciones sobre Puertos Secos" },
+};
 
 const posts: CategoriaPost[] = [
   {
