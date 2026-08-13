@@ -86,6 +86,8 @@ export default function ContactPage() {
             </p>
           </div>
 
+          {/* Oculto temporalmente: bloque de Oficinas */}
+          {/*
           <div className={styles.infoBlock}>
             <span className={styles.infoLabel}>Oficinas</span>
             <p className={styles.infoText}>
@@ -94,6 +96,7 @@ export default function ContactPage() {
               CABA, Argentina
             </p>
           </div>
+          */}
 
           <div className={styles.infoBlock}>
             <span className={styles.infoLabel}>Seguinos</span>
