@@ -13,6 +13,16 @@ export type Noticia = {
 // El primer item es el destacado en la home y en /noticias.
 export const NOTICIAS: Noticia[] = [
   {
+    slug: "editorial_puertos_argentinos",
+    href: "/noticias/editorial_puertos_argentinos",
+    title: "Por qué la Argentina necesita pensar sus puertos",
+    date: "14 de Agosto de 2026",
+    image: "/noticias/img_noticias/editorial_02.jpg",
+    category: "Editorial",
+    description:
+      "Editorial de Fundación Mundo Puerto: por qué el desarrollo portuario federal debe convertirse en política de Estado y causa nacional, con planificación de largo plazo, inversión estratégica y consenso tripartito.",
+  },
+  {
     slug: "editorial_practicaje",
     href: "/noticias/editorial_practicaje",
     title: "Practicaje, pilotaje, baquía: una reforma que exige revisión técnica antes que ideológica",

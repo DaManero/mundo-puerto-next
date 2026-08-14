@@ -12,6 +12,7 @@ const INVESTIGACIONES_ALIASES: Record<string, string> = {
 };
 
 const NOTICIAS_ALIASES: Record<string, string> = {
+  editorial_puertos_argentinos: "/noticias/editorial_puertos_argentinos.html",
   editorial_practicaje: "/noticias/editorial_practicaje.html",
   entrevista_lourido: "/noticias/entrevista_lourido.html",
   entrevista_duran: "/noticias/entrevista_duran.html",

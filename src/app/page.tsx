@@ -23,6 +23,13 @@ type Publicacion = {
 
 const ultimasPublicaciones: Publicacion[] = [
   {
+    href: "/noticias/editorial_puertos_argentinos",
+    title: "Por qué la Argentina necesita pensar sus puertos",
+    date: "14 de Agosto de 2026",
+    image: "/noticias/img_noticias/editorial_02.jpg",
+    category: "Editorial",
+  },
+  {
     href: "/noticias/editorial_practicaje",
     title: "Practicaje, pilotaje, baquía: una reforma que exige revisión técnica antes que ideológica",
     date: "05 de Agosto de 2026",
@@ -34,13 +41,6 @@ const ultimasPublicaciones: Publicacion[] = [
     title: "Lourido: “No perdamos la esencia de los puertos”",
     date: "11 de Mayo de 2023",
     image: "/noticias/img_noticias/lourido_0101.jpg",
-    category: "Entrevista",
-  },
-  {
-    href: "/noticias/entrevista_duran",
-    title: "Durán: “Un puerto verde es un puerto más competitivo”",
-    date: "18 de Abril de 2023",
-    image: "/noticias/img_noticias/duran_0101.jpg",
     category: "Entrevista",
   },
 ];

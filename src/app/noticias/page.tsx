@@ -65,8 +65,8 @@ export default function NoticiasPage() {
             <Image
               src={featured.image}
               alt={featured.title}
-              width={800}
-              height={520}
+              fill
+              sizes="(max-width: 960px) 100vw, 55vw"
               priority
             />
           </div>
