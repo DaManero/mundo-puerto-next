@@ -16,7 +16,7 @@ export const NOTICIAS: Noticia[] = [
     slug: "editorial_puertos_argentinos",
     href: "/noticias/editorial_puertos_argentinos",
     title: "Por qué la Argentina necesita pensar sus puertos",
-    date: "14 de Agosto de 2026",
+    date: "18 de Agosto de 2026",
     image: "/noticias/img_noticias/editorial_02.jpg",
     category: "Editorial",
     description:
